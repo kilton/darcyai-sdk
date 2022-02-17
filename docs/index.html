@@ -178,7 +178,7 @@
               
                 <h1 id="getting-started-with-darcy-ai">Getting started with Darcy AI</h1>
 <p>The Darcy AI SDK offers a rich set of features that Darcy AI application developers can use to easily build complex AI processing chains. This makes developing rich real-time applications possible in a shorter timeframe and with a much more standardized approach.</p>
-<p>If you have not yet read the overview of Darcy AI terminology, it is recommended that you do that first. You can find it here <a href="/terminology">Darcy AI Terminology Guide</a></p>
+<p>If you have not yet read the overview of Darcy AI terminology, it is recommended that you do that first. You can find it here <a href="terminology/">Darcy AI Terminology Guide</a></p>
 <h2 id="thinking-in-terms-of-darcy-ai-pipelines">Thinking in terms of Darcy AI pipelines</h2>
 <p>The concept of an AI pipeline is similar to complex event processing (CEP) and data stream processing, but there are some unique aspects you will notice when building with the Darcy AI.</p>
 <p>You are allowed only one Darcy AI pipeline in your application. There is a reason for this. A pipeline allows you to order the AI operations in a way that produces predictable trade-offs. One example is placing two different AI operations in parallel. On a hardware system that does not have enough AI accelerator hardware, Darcy will need to make a decision about how to run those operations. If you had more than one pipeline, Darcy would have conflicting intelligence about how to sequence the operations and you would be unable to predict which pipeline would be able to process.</p>
@@ -296,7 +296,7 @@ my_data = StreamData(saved_video_frame, current_time)
 pipeline.run_perceptor(people_ai, my_data)
 </code></pre>
 <h2 id="bring-it-all-together-with-a-full-application">Bring it all together with a full application</h2>
-<p>The best way to learn all of these concepts is to see them in action. Start with building a sample application that illustrates all of these topics in actual code. Then build your own! You can find a sample application guide here <a href="/build">Build Guide</a>.</p>
+<p>The best way to learn all of these concepts is to see them in action. Start with building a sample application that illustrates all of these topics in actual code. Then build your own! You can find a sample application guide here <a href="build/">Build Guide</a>.</p>
               
             </div>
           </div>
@@ -351,5 +351,5 @@ pipeline.run_perceptor(people_ai, my_data)
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-02-17 22:17:11.807866+00:00
+Build Date UTC : 2022-02-17 22:49:35.468068+00:00
 -->
