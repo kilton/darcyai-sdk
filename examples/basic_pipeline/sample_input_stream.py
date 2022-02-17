@@ -1,7 +1,7 @@
 import time
-from darcyai_engine.input.input_stream import InputStream
-from darcyai_engine.stream_data import StreamData
-from darcyai_engine.utils import timestamp
+from darcyai.input.input_stream import InputStream
+from darcyai.stream_data import StreamData
+from darcyai.utils import timestamp
 
 class SampleInputStream(InputStream):
     def __init__(self,):

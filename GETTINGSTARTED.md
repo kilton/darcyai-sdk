@@ -35,7 +35,7 @@ A good example of an Input Stream is the CameraStream class that comes built-in 
 
 Instantiate the CameraStream object and set some of its parameters like this:
 ```
-from darcyai_engine.input.camera_stream import CameraStream
+from darcyai.input.camera_stream import CameraStream
 
 camera = CameraStream(video_device="/dev/video0", fps=20)
 ```
@@ -48,7 +48,7 @@ A good example of a powerful Perceptor is the People Perceptor that is built-in 
 
 Here is an example of creating a People Perceptor instance and adding it to the Pipeline:
 ```
-from darcyai_coral.people_perceptor import PeoplePerceptor
+from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
 
 people_ai = PeoplePerceptor()
 pipeline.add_perceptor("mypeople", people_ai, input_callback=people_input_callback)
@@ -76,7 +76,7 @@ A good example of an Output Stream is the LiveFeedStream class that comes built-
 
 Instantiate the LiveFeed output stream object and set some of its parameters like this:
 ```
-from darcyai_engine.output.live_feed_stream import LiveFeedStream
+from darcyai.output.live_feed_stream import LiveFeedStream
 
 def live_feed_callback(pom, input_data):
     #Start wth the annotated video frame available from the People Perceptor

@@ -1,7 +1,7 @@
 import boto3
 
-from darcyai_engine.output.output_stream import OutputStream
-from darcyai_engine.utils import validate_not_none, validate_type
+from darcyai.output.output_stream import OutputStream
+from darcyai.utils import validate_not_none, validate_type
 
 
 class S3Stream(OutputStream):

@@ -2,7 +2,7 @@ import librosa
 import numpy as np
 from flask import Flask
 
-from darcyai_engine.pipeline import Pipeline
+from darcyai.pipeline import Pipeline
 
 from audio_input_stream import AudioInputStream
 from audio_analysis_perceptor import AudioAnalysisPerceptor

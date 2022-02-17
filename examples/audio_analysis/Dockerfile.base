@@ -30,4 +30,4 @@ RUN python3 -m pip install \
         https://www.piwheels.org/simple/pillow/Pillow-8.3.2-cp37-cp37m-linux_armv7l.whl \
         https://www.piwheels.org/simple/imutils/imutils-0.5.4-py3-none-any.whl \
         https://www.piwheels.org/simple/opencv-python/opencv_python-4.5.3.56-cp37-cp37m-linux_armv7l.whl
-RUN python3 -m pip install --upgrade darcyai-coral
+RUN python3 -m pip install --upgrade darcyai

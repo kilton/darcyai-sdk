@@ -2,10 +2,10 @@ import os
 import pathlib
 from typing import Any
 
-from darcyai_coral.image_classification_perceptor import ImageClassificationPerceptor
-from darcyai_engine.config import Config
-from darcyai_engine.config_registry import ConfigRegistry
-from darcyai_engine.utils import validate_not_none, validate_type, validate
+from darcyai.perceptor.coral.image_classification_perceptor import ImageClassificationPerceptor
+from darcyai.config import Config
+from darcyai.config_registry import ConfigRegistry
+from darcyai.utils import validate_not_none, validate_type, validate
 from face_mask_detection_model import FaceMaskDetectionModel
 
 

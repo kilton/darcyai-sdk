@@ -3,9 +3,9 @@ import numpy as np
 import threading
 from flask import Flask
 
-from darcyai_engine.input.camera_stream import CameraStream
-from darcyai_engine.output.live_feed_stream import LiveFeedStream
-from darcyai_engine.pipeline import Pipeline
+from darcyai.input.camera_stream import CameraStream
+from darcyai.output.live_feed_stream import LiveFeedStream
+from darcyai.pipeline import Pipeline
 
 from face_detector import FaceDetector
 

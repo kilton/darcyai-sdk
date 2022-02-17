@@ -2,10 +2,10 @@ import os
 import pathlib
 from typing import Any
 
-from darcyai_coral.object_detection_perceptor import ObjectDetectionPerceptor
-from darcyai_engine.config import Config
-from darcyai_engine.config_registry import ConfigRegistry
-from darcyai_engine.utils import validate_not_none, validate_type, validate
+from darcyai.perceptor.coral.object_detection_perceptor import ObjectDetectionPerceptor
+from darcyai.config import Config
+from darcyai.config_registry import ConfigRegistry
+from darcyai.utils import validate_not_none, validate_type, validate
 
 
 class FaceDetector(ObjectDetectionPerceptor):

@@ -1,4 +1,4 @@
-from darcyai_engine.output.output_stream import OutputStream
+from darcyai.output.output_stream import OutputStream
 
 class SampleOutputStream(OutputStream):
     def __init__(self):

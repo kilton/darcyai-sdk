@@ -3,9 +3,9 @@ import math
 import numpy as np
 import pyaudio
 
-from darcyai_engine.input.input_stream import InputStream
-from darcyai_engine.stream_data import StreamData
-from darcyai_engine.utils import timestamp, validate_type, validate_not_none, validate
+from darcyai.input.input_stream import InputStream
+from darcyai.stream_data import StreamData
+from darcyai.utils import timestamp, validate_type, validate_not_none, validate
 
 class AudioInputStream(InputStream):
     """

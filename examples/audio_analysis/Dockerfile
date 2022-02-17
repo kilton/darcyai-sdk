@@ -1,4 +1,4 @@
-FROM edgeworx/darcy-ai-librosa-armv7l:latest
+FROM darcyai/darcy-ai-librosa-armv7l:latest
 
 COPY . /src
 WORKDIR /src

@@ -1,5 +1,5 @@
-from darcyai_engine.tests.perceptor_mock import PerceptorMock
-from darcyai_engine.pipeline import Pipeline
+from darcyai.tests.perceptor_mock import PerceptorMock
+from darcyai.pipeline import Pipeline
 from sample_input_stream import SampleInputStream
 from sample_output_stream import SampleOutputStream
 

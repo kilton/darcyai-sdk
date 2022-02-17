@@ -1,9 +1,9 @@
-FROM edgeworx/darcy-ai-base-x86:dev
+FROM darcyai/darcy-ai-base:dev
 
 
 WORKDIR /src
 
-RUN python3 -m pip install darcyai-engine --upgrade
+RUN python3 -m pip install darcyai --upgrade
 
 COPY . /src/
 

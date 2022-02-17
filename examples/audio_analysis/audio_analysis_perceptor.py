@@ -3,8 +3,8 @@ import os
 import pathlib
 import tflite_runtime.interpreter as tflite
 
-from darcyai_engine.perceptor.perceptor import Perceptor
-from darcyai_engine.config import Config
+from darcyai.perceptor.perceptor import Perceptor
+from darcyai.config import Config
 
 
 class AudioAnalysisPerceptor(Perceptor):

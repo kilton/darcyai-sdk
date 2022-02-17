@@ -1,9 +1,9 @@
 import time
 from random import random
 
-from darcyai_engine.perceptor.perceptor import Perceptor
-from darcyai_engine.config import Config
-from darcyai_engine.serializable import Serializable
+from darcyai.perceptor.perceptor import Perceptor
+from darcyai.config import Config
+from darcyai.serializable import Serializable
 
 
 class BasicPOM(Serializable):

@@ -1,4 +1,4 @@
-FROM edgeworx/darcy-ai-coral-armv7l:dev
+FROM darcyai/darcy-ai-coral:dev
 
 COPY requirements.txt /src/
 WORKDIR /src

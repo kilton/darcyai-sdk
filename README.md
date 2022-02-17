@@ -67,8 +67,7 @@ If you prefer to access the latest Darcy AI developer documentation with an inte
 - Report and track bugs in the Darcy AI platform and SDK using Github issues [https://github.com/darcyai/darcyai-sdk/issues](https://github.com/darcyai/darcyai-sdk/issues)
 
 ### Python packages for Darcy AI
-- Darcy AI Engine package [https://pypi.org/project/darcyai-engine/](https://pypi.org/project/darcyai-engine/)
-- Darcy AI Coral Accelerator extension package [https://pypi.org/project/darcyai-coral/](https://pypi.org/project/darcyai-coral/)
+- Darcy AI package [https://pypi.org/project/darcyai/](https://pypi.org/project/darcyai/)
 
 ### Darcy Cloud
 Deploy and manage edge applications including Darcy AI applications with the Darcy Cloud. Create an account for free at [https://cloud.darcy.ai](https://cloud.darcy.ai)
