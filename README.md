@@ -41,37 +41,37 @@ You will need some hardware to run your Darcy AI application. Darcy can generall
 
 ## Getting started
 
-If you haven't already become familiar with the Darcy AI platform terminology, check out this [Terminology Guide](./docs/TERMINOLOGY.md) to get up to speed quickly.
+If you haven't already become familiar with the Darcy AI platform terminology, check out this [Terminology Guide](./TERMINOLOGY.md) to get up to speed quickly.
 
-The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Getting Started Guide](./docs/GETTINGSTARTED.md)
+The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Getting Started Guide](./GETTINGSTARTED.md)
 
 ## Building
 
-Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./docs/BUILD.md)
+Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./BUILD.md)
 
 ## Deploying
 
-Learn how to deploy your Darcy AI application to your edge devices using the Edgeworx Cloud in the [Deployment Guide](./docs/DEPLOY.md)
+Learn how to deploy your Darcy AI application to your edge devices using the Darcy Cloud in the [Deployment Guide](./DEPLOY.md)
 
 ## Documentation
 
-Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To open the documentation site locally use [Darcy AI Documentation Local Home Page](./docs/api/index.html)
+Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To open the documentation site locally use [Darcy AI Documentation Local Home Page](./docs/index.html)
 
-If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://edgeworx.github.io/darcyai-engine/)
+If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://darcyai.github.io/darcyai-sdk/)
 
 ## Resources
 
 ### Getting help
 
-- Get help from the other Darcy AI developers, the Darcy team, and the whole Darcy community on the Darcy AI Forum at [https://discuss.edgeworx.io/c/darcy-ai/](https://discuss.edgeworx.io/c/darcy-ai/)
-- Report and track bugs in the Darcy AI platform and SDK using Github issues [https://github.com/edgeworx/darcyai-sdk/issues](https://github.com/edgeworx/darcyai-sdk/issues)
+- Get help from the other Darcy AI developers, the Darcy team, and the whole Darcy community on the Darcy AI Forum at [https://discuss.darcy.ai/c/darcy-ai/](https://discuss.darcy.ai/c/darcy-ai/)
+- Report and track bugs in the Darcy AI platform and SDK using Github issues [https://github.com/darcyai/darcyai-sdk/issues](https://github.com/darcyai/darcyai-sdk/issues)
 
 ### Python packages for Darcy AI
 - Darcy AI Engine package [https://pypi.org/project/darcyai-engine/](https://pypi.org/project/darcyai-engine/)
 - Darcy AI Coral Accelerator extension package [https://pypi.org/project/darcyai-coral/](https://pypi.org/project/darcyai-coral/)
 
-### Edgeworx Cloud
-Deploy and manage edge applications including Darcy AI applications with the Edgeworx Cloud. Create an account for free at [https://cloud.edgeworx.io](https://cloud.edgeworx.io)
+### Darcy Cloud
+Deploy and manage edge applications including Darcy AI applications with the Darcy Cloud. Create an account for free at [https://cloud.darcy.ai](https://cloud.darcy.ai)
 
 ### Other helpful links
 - Company website for Edgeworx, the providers of the Darcy AI platform [https://edgeworx.io](https://edgeworx.io)
