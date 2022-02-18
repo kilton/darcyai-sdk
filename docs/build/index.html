@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Build - Darcy AI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Build";
+    var mkdocs_page_input_path = "build.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Darcy AI</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../terminology/">Terminology</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Build</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#create-your-application-python-file-and-import-libraries">Create your application Python file and import libraries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#add-the-pipeline-input-stream-and-output-stream-objects">Add the Pipeline, Input Stream, and Output Stream objects</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-up-a-callback-and-add-the-output-stream-to-the-pipeline">Set up a callback and add the Output Stream to the Pipeline</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#define-an-event-callback-and-an-input-callback-and-instantiate-the-people-perceptor">Define an event callback and an input callback and instantiate the People Perceptor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#add-the-people-perceptor-to-the-pipeline">Add the People Perceptor to the Pipeline</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#change-some-configuration-items-in-the-people-perceptor">Change some configuration items in the People Perceptor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#start-the-pipeline">Start the Pipeline</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#check-your-completed-code">Check your completed code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#save-your-python-file-to-your-raspberry-pi">Save your Python file to your Raspberry Pi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#add-a-dockerfile-to-the-same-directory-as-your-python-file">Add a Dockerfile to the same directory as your Python file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#build-your-docker-container">Build your Docker container</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-your-application">Run your application</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#view-your-real-time-darcy-ai-application-video-output">View your real-time Darcy AI application video output</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pipeline/">Pipeline</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../perceptor/">Perceptor</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../streamdata/">StreamData</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../config/">Config</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../perceptionobjectmodel/">PerceptionObjectModel</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../serializable/">Serializable</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Input Streams</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../input-streams/inputstream/">InputStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../input-streams/inputmultistream/">InputMultiStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../input-streams/camerastream/">CameraStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../input-streams/videofilestream/">VideoFileStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../input-streams/videostreamdata/">VideoStreamData</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Output Streams</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../output-streams/outputstream/">OutputStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../output-streams/livefeedstream/">LiveFeedStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../output-streams/restapistream/">RestApiStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../output-streams/csvoutputstream/">CSVOutputStream</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../output-streams/jsonoutputstream/">JSONOutputStream</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Coral Perceptors</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/peoplepom/">PeoplePOM</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Darcy AI</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Build</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="building-your-darcy-ai-application">Building your Darcy AI application</h1>
+<p>It’s easy to build a Darcy AI application but how do you get started? Here’s an example application that introduces all of the main concepts you will need for building your own application. Start by following along!</p>
+<h2 id="requirements">Requirements</h2>
+<p>You’ll need to have a few things in place before you build. Here’s the list:
+- Visual Studio Code (VS Code) with Python extensions
+    - <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
+    - <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">https://marketplace.visualstudio.com/items?itemName=ms-python.python</a>
+- A Raspberry Pi with an attached video camera and Google Coral edge TPU
+- Set up your VS Code environment to develop on your Darcy Cam or Raspberry Pi remotely
+    - <a href="https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/">https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/</a>
+- Python 3.5+
+- Docker on your Raspberry Pi</p>
+<h2 id="create-your-application-python-file-and-import-libraries">Create your application Python file and import libraries</h2>
+<p>You only need a single Python file to build a Darcy AI application. Open a new .py file in VS Code and name it whatever you want. Then add the following statements at the top to include the Darcy AI libraries and some additional helpful libraries:</p>
+<pre><code>import cv2
+import os
+import pathlib
+
+from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
+from darcyai.input.camera_stream import CameraStream
+from darcyai.output.live_feed_stream import LiveFeedStream
+from darcyai.pipeline import Pipeline
+</code></pre>
+<p>If you don’t have the <code>darcyai</code> library installed yet, you can install it with PIP package installer for Python using the following commands, which you should run both on your development workstation and on your Raspberry Pi where you will be running your application:</p>
+<pre><code>pip install darcyai
+</code></pre>
+<h2 id="add-the-pipeline-input-stream-and-output-stream-objects">Add the Pipeline, Input Stream, and Output Stream objects</h2>
+<p>This part is quite easy. Just follow the comments to learn more about these 3 important lines of code.</p>
+<pre><code>#Instantiate an Camera Stream input stream object
+camera = CameraStream(video_device=&quot;/dev/video0&quot;, fps=20)
+
+#Instantiate the Pipeline object and pass it the Camera Stream object as its input stream source
+pipeline = Pipeline(input_stream=camera)
+
+#Create a Live Feed output stream object and specify some URL parameters
+live_feed = LiveFeedStream(path=&quot;/&quot;, port=3456, host=&quot;0.0.0.0&quot;)
+</code></pre>
+<h2 id="set-up-a-callback-and-add-the-output-stream-to-the-pipeline">Set up a callback and add the Output Stream to the Pipeline</h2>
+<p>Before we add the LiveFeed Output Stream to the Pipeline, we need to set up a callback function that we are going to use to process the data before displaying the video. Follow the comments to learn about the steps that are taken. This is the most complex portion of the whole application and it is where all of the business logic is taking place. After the callback function definition, there is a line for adding the LiveFeed Output Stream to the Pipeline. That command needs to have the callback function already defined before it can execute successfully.</p>
+<pre><code>#Create a callback function for handling the Live Feed output stream data before it gets presented
+def live_feed_callback(pom, input_data):
+    #Start wth the annotated video frame available from the People Perceptor
+    frame = pom.peeps.annotatedFrame().copy()
+
+    #Add some text telling how many people are in the scene
+    label = &quot;{} peeps&quot;.format(pom.peeps.peopleCount())
+    color = (0, 255, 0)
+    cv2.putText(frame, str(label), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+
+    #If we have anyone, demonstrate looking up that person in the POM by getting their face size
+    #And then put it on the frame as some text
+    #NOTE: this will just take the face size from the last person in the array
+    if pom.peeps.peopleCount() &gt; 0:
+        for person_id in pom.peeps.people():
+            face_size = pom.peeps.faceSize(person_id)
+            face_height = face_size[1]
+            label2 = &quot;{} face height&quot;.format(face_height)
+            color = (0, 255, 255)
+            cv2.putText(frame, str(label2), (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+
+    #Pass the finished frame out of this callback so the Live Feed output stream can display it
+    return frame
+
+#Add the Live Feed output stream to the Pipeline and use the callback from above as the handler
+pipeline.add_output_stream(&quot;output&quot;, live_feed_callback, live_feed)
+</code></pre>
+<h2 id="define-an-event-callback-and-an-input-callback-and-instantiate-the-people-perceptor">Define an event callback and an input callback and instantiate the People Perceptor</h2>
+<p>Just like the LiveFeed Output Stream, the People Perceptor must have the callbacks already defined before it can work with those callbacks. The input callback simply takes the Input Stream data and sends it onward to the People Perceptor. The “New Person” event callback simply prints the unique person identifier string to the console output when a new person has been detected by Darcy.</p>
+<pre><code>#Create a callback function for handling the input that is about to pass to the People Perceptor
+def people_input_callback(input_data, pom, config):
+    #Just take the frame from the incoming Input Stream and send it onward - no need to modify the frame
+    frame = input_data.data.copy()
+    return frame
+
+#Create a callback function for handling the &quot;New Person&quot; event from the People Perceptor
+#Just print the person ID to the console
+def new_person_callback(person_id):
+    print(&quot;New person: {}&quot;.format(person_id))
+
+#Instantiate a People Perceptor
+people_ai = PeoplePerceptor()
+
+#Subscribe to the &quot;New Person&quot; event from the People Perceptor and use our callback from above as the handler
+people_ai.on(&quot;new_person_entered_scene&quot;, new_person_callback)
+</code></pre>
+<h2 id="add-the-people-perceptor-to-the-pipeline">Add the People Perceptor to the Pipeline</h2>
+<pre><code>#Add the People Perceptor instance to the Pipeline and use the input callback from above as the input preparation handler
+pipeline.add_perceptor(&quot;peeps&quot;, people_ai, input_callback=people_input_callback)
+</code></pre>
+<h2 id="change-some-configuration-items-in-the-people-perceptor">Change some configuration items in the People Perceptor</h2>
+<pre><code>#Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
+pipeline.set_perceptor_config(&quot;peeps&quot;, &quot;show_pose_landmark_dots&quot;, True)
+pipeline.set_perceptor_config(&quot;peeps&quot;, &quot;pose_landmark_dot_size&quot;, 2)
+pipeline.set_perceptor_config(&quot;peeps&quot;, &quot;pose_landmark_dot_color&quot;, &quot;0,255,0&quot;)
+</code></pre>
+<h2 id="start-the-pipeline">Start the Pipeline</h2>
+<pre><code>#Start the Pipeline
+pipeline.run()
+</code></pre>
+<h2 id="check-your-completed-code">Check your completed code</h2>
+<p>Your finished Python file should look similar to this. If it doesn’t, take a minute to figure out what is missing or incorrect. Next we will build an application container from this code.</p>
+<pre><code>import cv2
+import os
+import pathlib
+
+from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
+from darcyai.input.camera_stream import CameraStream
+from darcyai.output.live_feed_stream import LiveFeedStream
+from darcyai.pipeline import Pipeline
+
+#Instantiate an Camera Stream input stream object
+camera = CameraStream(video_device=&quot;/dev/video0&quot;, fps=20)
+
+#Instantiate the Pipeline object and pass it the Camera Stream object as its input stream source
+pipeline = Pipeline(input_stream=camera)
+
+#Create a Live Feed output stream object and specify some URL parameters
+live_feed = LiveFeedStream(path=&quot;/&quot;, port=3456, host=&quot;0.0.0.0&quot;)
+
+#Create a callback function for handling the Live Feed output stream data before it gets presented
+def live_feed_callback(pom, input_data):
+    #Start wth the annotated video frame available from the People Perceptor
+    frame = pom.peeps.annotatedFrame().copy()
+
+    #Add some text telling how many people are in the scene
+    label = &quot;{} peeps&quot;.format(pom.peeps.peopleCount())
+    color = (0, 255, 0)
+    cv2.putText(frame, str(label), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+
+    #If we have anyone, demonstrate looking up that person in the POM by getting their face size
+    #And then put it on the frame as some text
+    #NOTE: this will just take the face size from the last person in the array
+    if pom.peeps.peopleCount() &gt; 0:
+        for person_id in pom.peeps.people():
+            face_size = pom.peeps.faceSize(person_id)
+            face_height = face_size[1]
+            label2 = &quot;{} face height&quot;.format(face_height)
+            color = (0, 255, 255)
+            cv2.putText(frame, str(label2), (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+
+    #Pass the finished frame out of this callback so the Live Feed output stream can display it
+    return frame
+
+#Add the Live Feed output stream to the Pipeline and use the callback from above as the handler
+pipeline.add_output_stream(&quot;output&quot;, live_feed_callback, live_feed)
+
+#Create a callback function for handling the input that is about to pass to the People Perceptor
+def people_input_callback(input_data, pom, config):
+    #Just take the frame from the incoming Input Stream and send it onward - no need to modify the frame
+    frame = input_data.data.copy()
+    return frame
+
+#Create a callback function for handling the &quot;New Person&quot; event from the People Perceptor
+#Just print the person ID to the console
+def new_person_callback(person_id):
+    print(&quot;New person: {}&quot;.format(person_id))
+
+#Instantiate a People Perceptor
+people_ai = PeoplePerceptor()
+
+#Subscribe to the &quot;New Person&quot; event from the People Perceptor and use our callback from above as the handler
+people_ai.on(&quot;new_person_entered_scene&quot;, new_person_callback)
+
+#Add the People Perceptor instance to the Pipeline and use the input callback from above as the input preparation handler
+pipeline.add_perceptor(&quot;peeps&quot;, people_ai, input_callback=people_input_callback)
+
+#Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
+pipeline.set_perceptor_config(&quot;peeps&quot;, &quot;show_pose_landmark_dots&quot;, True)
+pipeline.set_perceptor_config(&quot;peeps&quot;, &quot;pose_landmark_dot_size&quot;, 2)
+pipeline.set_perceptor_config(&quot;peeps&quot;, &quot;pose_landmark_dot_color&quot;, &quot;0,255,0&quot;)
+
+#Start the Pipeline
+pipeline.run()
+</code></pre>
+<h2 id="save-your-python-file-to-your-raspberry-pi">Save your Python file to your Raspberry Pi</h2>
+<p>If you are using VS Code remote development, then your file should automatically save on the device when you save in VS Code. If you are manually adding your file to your Raspberry Pi, copy the file to the device now.</p>
+<h2 id="add-a-dockerfile-to-the-same-directory-as-your-python-file">Add a Dockerfile to the same directory as your Python file</h2>
+<p>You will build a Docker container to run your Darcy AI application. You only need your Python file and a Dockerfile to build the container. Make sure you create this Dockerfile in the same directory as your Python file and change the name from YOURFILE.py to the actual name of your file.</p>
+<pre><code>FROM darcyai/darcy-ai-coral:dev
+
+RUN python3 -m pip install --upgrade darcyai
+
+COPY YOURFILE.py /src/my_app.py
+
+ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;cd /src/ &amp;&amp; python3 -u ./my_app.py&quot;]
+</code></pre>
+<h2 id="build-your-docker-container">Build your Docker container</h2>
+<p>Use the following command to build your Docker container. It may take 10 or 15 minutes if you are building for the first time and you do not have a very fast internet connection. This is because the underlying container base images will need to be downloaded. After the first build, this process should only take a minute or two.</p>
+<pre><code>sudo docker build -t darcydev/my-people-ai-app:1.0.0 .
+</code></pre>
+<h2 id="run-your-application">Run your application</h2>
+<p>Use this Docker command to run your application container right away. You can also use this Docker container with the <a href="https://cloud.darcy.ai">Darcy Cloud</a> to deploy and manage the application.</p>
+<pre><code>sudo docker run -d --privileged -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
+</code></pre>
+<h2 id="view-your-real-time-darcy-ai-application-video-output">View your real-time Darcy AI application video output</h2>
+<p>Once your application container is running, you can view the live video feed by visiting the following URL in any browser. Replace <code>YOUR.DEVICE.IP.ADDRESS</code> with the actual IP address of your Raspberry Pi.</p>
+<pre><code>https://YOUR.DEVICE.IP.ADDRESS:3456/
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pipeline/" class="btn btn-neutral float-right" title="Pipeline">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../terminology/" class="btn btn-neutral" title="Terminology"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../terminology/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../pipeline/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
