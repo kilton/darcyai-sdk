@@ -59,7 +59,7 @@ Learn how to deploy your Darcy AI application to your edge devices using the Dar
 
 ## Documentation
 
-Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To open the documentation site locally use [Darcy AI Documentation Local Home Page](./docs/index.html)
+Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
 
 If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://darcyai.github.io/darcyai-sdk/)
 
@@ -77,5 +77,5 @@ If you prefer to access the latest Darcy AI developer documentation with an inte
 Deploy and manage edge applications including Darcy AI applications with the Darcy Cloud. Create an account for free at [https://cloud.darcy.ai](https://cloud.darcy.ai)
 
 ### Other helpful links
-- Company website for Edgeworx, the providers of the Darcy AI platform [https://edgeworx.io](https://edgeworx.io)
+- Company website for Edgeworx, the providers of the Darcy AI platform [https://darcy.ai](https://darcy.ai)
 - Official website for the Tensorflow AI project [https://www.tensorflow.org](https://www.tensorflow.org)
