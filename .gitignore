@@ -10,3 +10,4 @@ venv/*
 pyvenv.cfg
 .pytest_cache
 .DS_Store
+.code-workspace

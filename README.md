@@ -2,6 +2,8 @@
 
 This is the official software development kit (SDK) for building on the Darcy AI platform
 
+To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
+
 ## Introducing the Darcy AI platform
 
 Darcy is an artificial intelligence (AI) that is focused on real-time interactions with the world around her. She has a variety of senses, such as vision and hearing, that allow her to perceive her environment. You can give Darcy additional senses, such as LiDAR or thermal vision, to expand her capabilities. Darcy is present in every device where a Darcy AI application is running. She runs entirely in each device. No data needs to leave the device and no computation is done in the cloud.
@@ -12,7 +14,9 @@ With the Darcy AI SDK, you get everything you need to build real-time AI applica
 
 ## How to use this SDK
 
-The [docs](./docs) folder contains the full Darcy AI programming interface documentation and other helpful guide documents. Use this folder to learn about the Darcy AI platform and to get started. The guide documents will take you from an absolute beginner to building and deploying your own Darcy AI applications.
+Use this document and the other markdown files in this directory to learn about the Darcy AI platform and to get started. The guide documents will take you from an absolute beginner to building and deploying your own Darcy AI applications. The [docs](./docs) folder contains the full technical Darcy AI programming documentation.
+
+To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
 
 The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. The Darcy AI Explorer demo application is a rich and complex example that leverages nearly all of the programming interfaces that Darcy offers.
 
@@ -55,7 +59,7 @@ Learn how to deploy your Darcy AI application to your edge devices using the Dar
 
 ## Documentation
 
-Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To open the documentation site locally use [Darcy AI Documentation Local Home Page](./docs/index.html)
+Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
 
 If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://darcyai.github.io/darcyai-sdk/)
 
@@ -73,5 +77,5 @@ If you prefer to access the latest Darcy AI developer documentation with an inte
 Deploy and manage edge applications including Darcy AI applications with the Darcy Cloud. Create an account for free at [https://cloud.darcy.ai](https://cloud.darcy.ai)
 
 ### Other helpful links
-- Company website for Edgeworx, the providers of the Darcy AI platform [https://edgeworx.io](https://edgeworx.io)
+- Company website for Edgeworx, the providers of the Darcy AI platform [https://darcy.ai](https://darcy.ai)
 - Official website for the Tensorflow AI project [https://www.tensorflow.org](https://www.tensorflow.org)
