@@ -2,6 +2,8 @@
 
 This is the official software development kit (SDK) for building on the Darcy AI platform
 
+To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
+
 ## Introducing the Darcy AI platform
 
 Darcy is an artificial intelligence (AI) that is focused on real-time interactions with the world around her. She has a variety of senses, such as vision and hearing, that allow her to perceive her environment. You can give Darcy additional senses, such as LiDAR or thermal vision, to expand her capabilities. Darcy is present in every device where a Darcy AI application is running. She runs entirely in each device. No data needs to leave the device and no computation is done in the cloud.
@@ -12,7 +14,9 @@ With the Darcy AI SDK, you get everything you need to build real-time AI applica
 
 ## How to use this SDK
 
-The [docs](./docs) folder contains the full Darcy AI programming interface documentation and other helpful guide documents. Use this folder to learn about the Darcy AI platform and to get started. The guide documents will take you from an absolute beginner to building and deploying your own Darcy AI applications.
+Use this document and the other markdown files in this directory to learn about the Darcy AI platform and to get started. The guide documents will take you from an absolute beginner to building and deploying your own Darcy AI applications. The [docs](./docs) folder contains the full technical Darcy AI programming documentation.
+
+To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
 
 The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. The Darcy AI Explorer demo application is a rich and complex example that leverages nearly all of the programming interfaces that Darcy offers.
 
