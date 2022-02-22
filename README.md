@@ -1,8 +1,8 @@
 # Darcy AI SDK
 
-This is the official software development kit (SDK) for building on the Darcy AI platform
+This is the official software development kit (SDK) for building on the Darcy AI platform.
 
-To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
+To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000).
 
 ## Introducing the Darcy AI platform
 
@@ -16,7 +16,7 @@ With the Darcy AI SDK, you get everything you need to build real-time AI applica
 
 Use this document and the other markdown files in this directory to learn about the Darcy AI platform and to get started. The guide documents will take you from an absolute beginner to building and deploying your own Darcy AI applications. The [docs](./docs) folder contains the full technical Darcy AI programming documentation.
 
-To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
+To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000).
 
 The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. The Darcy AI Explorer demo application is a rich and complex example that leverages nearly all of the programming interfaces that Darcy offers.
 
@@ -47,21 +47,21 @@ You will need some hardware to run your Darcy AI application. Darcy can generall
 
 If you haven't already become familiar with the Darcy AI platform terminology, check out this [Terminology Guide](./TERMINOLOGY.md) to get up to speed quickly.
 
-The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Getting Started Guide](./GETTINGSTARTED.md)
+The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Getting Started Guide](./GETTINGSTARTED.md).
 
 ## Building
 
-Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./BUILD.md)
+Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./BUILD.md).
 
 ## Deploying
 
-Learn how to deploy your Darcy AI application to your edge devices using the Darcy Cloud in the [Deployment Guide](./DEPLOY.md)
+Learn how to deploy your Darcy AI application to your edge devices using the Darcy Cloud in the [Deployment Guide](./DEPLOY.md).
 
 ## Documentation
 
-Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000)
+Open the Darcy AI technical documentation to search and browse the API with code examples. This is a local documentation site that will run directly in your browser. The documentation is specific to each version of the Darcy AI SDK so it's the best place to reference when building. To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000).
 
-If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://darcyai.github.io/darcyai-sdk/)
+If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://darcyai.github.io/darcyai-sdk/).
 
 ## Resources
 
