@@ -51,7 +51,9 @@ Run the shell script [check.bash](./check.bash) to verify that your current envi
 
 If you haven't already become familiar with the Darcy AI platform terminology, check out this [Terminology Guide](./TERMINOLOGY.md) to get up to speed quickly.
 
-The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Getting Started Guide](./GETTINGSTARTED.md).
+The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Darcy Explorer Guide](./DARCY_EXPLORER.md).
+
+When you are ready to create, you can launch your Darcy AI developer journey with the [Getting Started Guide](./GETTING_STARTED.md).
 
 ## Building
 
