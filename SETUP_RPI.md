@@ -26,7 +26,9 @@ The Raspberry Pi OS versions can be downloaded here if you want to flash your SD
 
 ## Connect your Raspberry Pi to your network and the Internet
 
+You can connect your RPi board using either a wired Ethernet connection or using WiFi. If you are using a wired connection, simply connect an Ethernet cable to your Raspberry Pi port and proceed to the next step.
 
+If you are using WiFi, then you need to 
 
 ## Set up a callback and add the Output Stream to the Pipeline
 
@@ -113,10 +115,10 @@ import cv2
 import os
 import pathlib
 
-from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
-from darcyai.input.camera_stream import CameraStream
-from darcyai.output.live_feed_stream import LiveFeedStream
-from darcyai.pipeline import Pipeline
+from darcyai_coral.people_perceptor import PeoplePerceptor
+from darcyai_engine.input.camera_stream import CameraStream
+from darcyai_engine.output.live_feed_stream import LiveFeedStream
+from darcyai_engine.pipeline import Pipeline
 
 #Instantiate an Camera Stream input stream object
 camera = CameraStream(video_device="/dev/video0", fps=20)
@@ -191,9 +193,10 @@ If you are using VS Code remote development, then your file should automatically
 
 You will build a Docker container to run your Darcy AI application. You only need your Python file and a Dockerfile to build the container. Make sure you create this Dockerfile in the same directory as your Python file and change the name from YOURFILE.py to the actual name of your file.
 ```
-FROM darcyai/darcy-ai-coral:dev
+FROM edgeworx/darcy-ai-coral-armv7l:dev
 
-RUN python3 -m pip install --upgrade darcyai
+RUN python3 -m pip install --upgrade darcyai-engine
+RUN python3 -m pip install --upgrade darcyai-coral
 
 COPY YOURFILE.py /src/my_app.py
 
@@ -209,7 +212,7 @@ sudo docker build -t darcydev/my-people-ai-app:1.0.0 .
 
 ## Run your application
 
-Use this Docker command to run your application container right away. You can also use this Docker container with the [Darcy Cloud](https://cloud.darcy.ai) to deploy and manage the application.
+Use this Docker command to run your application container right away. You can also use this Docker container with the [Edgeworx Cloud](https://cloud.edgeworx.io) to deploy and manage the application.
 ```
 sudo docker run -d --privileged -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
 ```
