@@ -6,16 +6,21 @@ Follow the steps in this guide to get your device connected to the [Darcy Cloud]
 
 ## Connect your device to the Darcy Cloud
 
-You’ll need
+Use the Darcy Cloud to manage your device and your edge AI applications. If you don't already have an account, you can create one now for free. Create an account or log in at [https://cloud.darcy.ai](https://cloud.darcy.ai).
+
+Once you are in your Darcy Cloud account, add your device as a node in your current project. You can use any of several methods to add a node, such as the "add node" button or the "plus button" in the bottom left. Follow the instructions in the pop-up window to add your device as a node.
+
+<img src="./docs/img/darcy-cloud-add-node-button.png" height="100" /> <img src="./docs/img/darcy-cloud-plus-node.png" height="100" /> <img src="./docs/img/darcy-cloud-plus-item-button.png" height="100" />
 
 ## Deploy the Darcy AI Explorer application
 
-You only 
+Click on the "plus button" and choose "app" to deploy a new application to your device. In the pop-up choose the "Darcy AI Explorer App" and then click "Next". Choose your device from the drop-down menu and then click "Deploy". The Darcy AI Explorer application will begin to download to your device. You can track the status of the app in the Darcy Cloud UI. When the app is listed as "Running" you can proceed to the next step. Depending on the Internet connection speed of your device, it may take about 15 minutes for the Darcy AI Explorer app to download and start on your device.
+
+<img src="./docs/img/darcy-cloud-explorer-app-deploy.png" />
 
 ## Open the Darcy AI Explorer
 
-This part is quite easy.
-Once your application container is running, you can view the live video feed by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your Raspberry Pi.
+Once your Darcy AI Explorer app is running, you can view the UI and use the app by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your device. See Darcy in action and explore what she can do!
 ```
-https://YOUR.DEVICE.IP.ADDRESS:3456/
+http://YOUR.DEVICE.IP.ADDRESS:5000/
 ```
