@@ -59,7 +59,7 @@ When you are ready to create, you can launch your Darcy AI developer journey wit
 
 Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./BUILD.md).
 
-To prepare your Raspberry Pi board as a development environment for building Darcy AI applications, follow the [Raspberry Pi Environment Setupd Guide](./SETUP_RPI.md).
+To prepare your Raspberry Pi board as a development environment for building Darcy AI applications, follow the [Raspberry Pi Environment Setup Guide](./SETUP_RPI.md).
 
 ## Deploying
 
