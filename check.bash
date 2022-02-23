@@ -7,7 +7,7 @@
 function check_python_version() {
 
     if ! python3 -c 'import sys; assert sys.version_info >= (3,7)' > /dev/null; then
-        echo "ERROR: This script requires Python 3.7 or later"
+        echo "ERROR: Darcy AI requires Python 3.7 or later"
         exit 1
     fi
 
