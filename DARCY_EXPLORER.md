@@ -16,7 +16,7 @@ Once you are in your Darcy Cloud account, add your device as a node in your curr
 
 Click on the "plus button" and choose "app" to deploy a new application to your device. In the pop-up choose the "Darcy AI Explorer App" and then click "Next". Choose your device from the drop-down menu and then click "Deploy". The Darcy AI Explorer application will begin to download to your device. You can track the status of the app in the Darcy Cloud UI. When the app is listed as "Running" you can proceed to the next step. Depending on the Internet connection speed of your device, it may take about 15 minutes for the Darcy AI Explorer app to download and start on your device.
 
-<img src="./docs/darcy-cloud-explorer-app-deploy.png" />
+<img src="./docs/img/darcy-cloud-explorer-app-deploy.png" />
 
 ## Open the Darcy AI Explorer
 
