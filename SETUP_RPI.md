@@ -104,11 +104,46 @@ This first command will download a convenient install script from Docker. Now ru
 sudo sh get-docker.sh
 ```
 
-Once Docker is installed, you need to add your standard user `Pi` to the `docker` group so you can execute Docker commands without using `sudo`.
+Once Docker is installed, you need to add your standard user `pi` to the `docker` group so you can execute Docker commands without using `sudo`.
 
 ```
-sudo usermod -aG docker Pi
+sudo usermod -aG docker pi
 ```
 
-## Build your Docker container
+## Install Google Coral software libraries
 
+You need the PyCoral and LibEdgeTPU software libraries installed on your Raspberry Pi. Follow the guide provided by Google and use the sections marked as "for Linux".
+
+[https://coral.ai/docs/accelerator/get-started/#requirements](https://coral.ai/docs/accelerator/get-started/#requirements)
+
+## Build OpenCV on your Raspberry Pi
+
+This step is the most time consuming. Fortunately, if you use the convenient script provided by Q-Engineering about one third down the page, you should find it fairly easy to perform the build and installation of this very important piece of software.
+
+Expect to spend a couple of hours building OpenCV on your Raspberry Pi. Once this step is completed, you will have a modern version of OpenCV that is optimized for your Raspberry Pi board. This is worth doing, as you will use OpenCV in almost every computer vision application.
+
+Version 4.5.5 of OpenCV is recommended. If you encounter a crash at the 99% build progress level, try changing the installation script to use `make -j2` instead of `make -j4`. It will take a little longer but should prevent the crash.
+
+[https://qengineering.eu/install-opencv-4.5-on-raspberry-pi-4.html](https://qengineering.eu/install-opencv-4.5-on-raspberry-pi-4.html)
+
+## Reboot your Raspberry Pi
+
+You will need to reboot your Raspberry Pi after finishing all of these installation steps. Make sure your camera and your Google Coral USB device are attached to your RPi when you reboot.
+
+```
+sudo reboot
+```
+
+## Check for Google Coral USB device(s)
+
+You can see which devices are attached to your Raspberry Pi using the command `lsusb`. This will display a list of devices. Look for an item that shows `Global Unichip Corp.`. You will have more than one of these items if you have more than one Google Coral USB device attached.
+
+You will notice that once you start running a Darcy AI application, the value shown by `lsusb` will change to `Google, Inc.`. This is normal and expected and whenever you reboot your Raspberry Pi it will return to `Global Unichip Corp.` temporarily.
+
+## Run the system check script
+
+Run the script called `check.bash` to scan your Raspberry Pi and make sure everything is looking good. If you receive an error, use the error message to pinpoint which step needs to be completed or fixed.
+
+## Start building your AI applications with Darcy
+
+Go to the [Build Guide](./BUILD.md) and get started building with Darcy AI!
