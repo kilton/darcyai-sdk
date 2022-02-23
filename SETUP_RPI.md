@@ -24,202 +24,91 @@ The Raspberry Pi SD card imager can be found here:
 The Raspberry Pi OS versions can be downloaded here if you want to flash your SD card without the RPi Imager software:
 [https://www.raspberrypi.com/software/operating-systems/](https://www.raspberrypi.com/software/operating-systems/)
 
+## Enable SSH on your Raspberry Pi
+
+Follow this guide to enable SSH on your Raspberry Pi board. Take these steps before you boot up the RPi for the first time by following the instructions in the first red box titled "NOTE" that begin with the words "For headless setup".
+
+[https://www.raspberrypi.com/documentation/computers/remote-access.html#enabling-the-server](https://www.raspberrypi.com/documentation/computers/remote-access.html#enabling-the-server)
+
 ## Connect your Raspberry Pi to your network and the Internet
 
 You can connect your RPi board using either a wired Ethernet connection or using WiFi. If you are using a wired connection, simply connect an Ethernet cable to your Raspberry Pi port and proceed to the next step.
 
-If you are using WiFi, then you need to 
+If you are using WiFi, then you need to use one of the following approaches to add your WiFi network to your Raspberry Pi.
 
-## Set up a callback and add the Output Stream to the Pipeline
+### Add your WiFi network via the Raspberry Pi desktop
 
-Before we add the LiveFeed Output Stream to the Pipeline, we need to set up a callback function that we are going to use to process the data before displaying the video. Follow the comments to learn about the steps that are taken. This is the most complex portion of the whole application and it is where all of the business logic is taking place. After the callback function definition, there is a line for adding the LiveFeed Output Stream to the Pipeline. That command needs to have the callback function already defined before it can execute successfully.
-```
-#Create a callback function for handling the Live Feed output stream data before it gets presented
-def live_feed_callback(pom, input_data):
-    #Start wth the annotated video frame available from the People Perceptor
-    frame = pom.peeps.annotatedFrame().copy()
+If you are using the Raspberry Pi desktop and you have your RPi connected to a monitor, keyboard, and mouse then all you need to do is click on the WiFi icon in the upper-right toolbar area and add your WiFi network.
 
-    #Add some text telling how many people are in the scene
-    label = "{} peeps".format(pom.peeps.peopleCount())
-    color = (0, 255, 0)
-    cv2.putText(frame, str(label), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+You will also want to open a terminal window so you can proceed with the next steps which use the command line.
 
-    #If we have anyone, demonstrate looking up that person in the POM by getting their face size
-    #And then put it on the frame as some text
-    #NOTE: this will just take the face size from the last person in the array
-    if pom.peeps.peopleCount() > 0:
-        for person_id in pom.peeps.people():
-            face_size = pom.peeps.faceSize(person_id)
-            face_height = face_size[1]
-            label2 = "{} face height".format(face_height)
-            color = (0, 255, 255)
-            cv2.putText(frame, str(label2), (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+### Add your WiFi network via the wpa_supplicant file
 
-    #Pass the finished frame out of this callback so the Live Feed output stream can display it
-    return frame
-    
-#Add the Live Feed output stream to the Pipeline and use the callback from above as the handler
-pipeline.add_output_stream("output", live_feed_callback, live_feed)
-```
+If you are not using the Raspberry Pi desktop then you will need to add your WiFi network using the file called `wpa_supplicant.conf`. This file is found under the `/etc/wpa_supplicant/` directory.
 
-## Define an event callback and an input callback and instantiate the People Perceptor
+You can either add this file to the SD card before you boot up the Raspberry Pi or you can edit the file directly if you have a monitor, keyboard, and mouse attached to your RPi.
 
-Just like the LiveFeed Output Stream, the People Perceptor must have the callbacks already defined before it can work with those callbacks. The input callback simply takes the Input Stream data and sends it onward to the People Perceptor. The “New Person” event callback simply prints the unique person identifier string to the console output when a new person has been detected by Darcy.
-```
-#Create a callback function for handling the input that is about to pass to the People Perceptor
-def people_input_callback(input_data, pom, config):
-    #Just take the frame from the incoming Input Stream and send it onward - no need to modify the frame
-    frame = input_data.data.copy()
-    return frame
-    
-#Create a callback function for handling the "New Person" event from the People Perceptor
-#Just print the person ID to the console
-def new_person_callback(person_id):
-    print("New person: {}".format(person_id))
-    
-#Instantiate a People Perceptor
-people_ai = PeoplePerceptor()
+Follow the instructions provided by the Raspberry Pi Foundation to configure your `wpa_supplicant.conf` file.
 
-#Subscribe to the "New Person" event from the People Perceptor and use our callback from above as the handler
-people_ai.on("new_person_entered_scene", new_person_callback)
-```
+[https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-networking31](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-networking31)
 
-## Add the People Perceptor to the Pipeline
+## Find your Raspberry Pi board IP address
 
-```
-#Add the People Perceptor instance to the Pipeline and use the input callback from above as the input preparation handler
-pipeline.add_perceptor("peeps", people_ai, input_callback=people_input_callback)
-```
+You will need to access your Raspberry Pi board using its hostname or IP address on your local network. This is true even if you are using a monitor, keyboard, and mouse with your RPi.
 
-## Change some configuration items in the People Perceptor
+Follow the instructions provided by the Raspberry Pi Foundation to identify your RPi board on the network.
+
+[https://www.raspberrypi.com/documentation/computers/remote-access.html#how-to-find-your-ip-address](https://www.raspberrypi.com/documentation/computers/remote-access.html#how-to-find-your-ip-address)
+
+## Enable legacy camera support if you are using the newest Raspberry Pi OS
+
+As of late 2021, the Raspberry Pi OS defaults to a camera configuration that is not compatible with many existing pieces of software. If you are using the newest Raspberry Pi OS, you must enable legacy camera support.
+
+Open a command line terminal or SSH into your Raspberry Pi and type `sudo raspi-config`. Then go to ‘Interface Options’ and then ‘Legacy Camera’. Reboot when you are done.
+
+## Python version
+
+Python 3.9.x should already be installed in your Raspberry Pi. You can check the version by running the command `python --version`.
+
+## Numpy package for Python
+
+You will need the Numpy package for Python. Version 1.19.x should already be installed. You can check the version with the command `pip list | grep numpy` which will search for `numpy` in the entire list of installed Python packages.
+
+If you do not have Numpy you can install it with the command `pip install numpy`.
+
+## Pillow package for Python
+
+You will need the Pillow package for Python. Version 8.1.x should already be installed. You can check the version with the command `pip list | grep Pillow`.
+
+If you do not have Pillow installed, you can install it with `pip install Pillow`.
+
+## imutils package for Python
+
+Install the imutils package for Python with the command `pip install imutils`.
+
+## DarcyAI package for Python
+
+Install the DarcyAI pacakge for Python with the command `pip install darcyai`.
+
+## Install Docker
+
+You will need the Docker container runtime and command line tools installed on your Raspberry Pi. Install Docker with the following commands.
 
 ```
-#Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
-pipeline.set_perceptor_config("peeps", "show_pose_landmark_dots", True)
-pipeline.set_perceptor_config("peeps", "pose_landmark_dot_size", 2)
-pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", "0,255,0")
+curl -fsSL https://get.docker.com -o get-docker.sh
 ```
 
-## Start the Pipeline
+This first command will download a convenient install script from Docker. Now run that script.
 
 ```
-#Start the Pipeline
-pipeline.run()
+sudo sh get-docker.sh
 ```
 
-## Check your completed code
+Once Docker is installed, you need to add your standard user `Pi` to the `docker` group so you can execute Docker commands without using `sudo`.
 
-Your finished Python file should look similar to this. If it doesn’t, take a minute to figure out what is missing or incorrect. Next we will build an application container from this code.
 ```
-import cv2
-import os
-import pathlib
-
-from darcyai_coral.people_perceptor import PeoplePerceptor
-from darcyai_engine.input.camera_stream import CameraStream
-from darcyai_engine.output.live_feed_stream import LiveFeedStream
-from darcyai_engine.pipeline import Pipeline
-
-#Instantiate an Camera Stream input stream object
-camera = CameraStream(video_device="/dev/video0", fps=20)
-
-#Instantiate the Pipeline object and pass it the Camera Stream object as its input stream source
-pipeline = Pipeline(input_stream=camera)
-
-#Create a Live Feed output stream object and specify some URL parameters
-live_feed = LiveFeedStream(path="/", port=3456, host="0.0.0.0")
-
-#Create a callback function for handling the Live Feed output stream data before it gets presented
-def live_feed_callback(pom, input_data):
-    #Start wth the annotated video frame available from the People Perceptor
-    frame = pom.peeps.annotatedFrame().copy()
-
-    #Add some text telling how many people are in the scene
-    label = "{} peeps".format(pom.peeps.peopleCount())
-    color = (0, 255, 0)
-    cv2.putText(frame, str(label), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
-
-    #If we have anyone, demonstrate looking up that person in the POM by getting their face size
-    #And then put it on the frame as some text
-    #NOTE: this will just take the face size from the last person in the array
-    if pom.peeps.peopleCount() > 0:
-        for person_id in pom.peeps.people():
-            face_size = pom.peeps.faceSize(person_id)
-            face_height = face_size[1]
-            label2 = "{} face height".format(face_height)
-            color = (0, 255, 255)
-            cv2.putText(frame, str(label2), (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
-
-    #Pass the finished frame out of this callback so the Live Feed output stream can display it
-    return frame
-
-#Add the Live Feed output stream to the Pipeline and use the callback from above as the handler
-pipeline.add_output_stream("output", live_feed_callback, live_feed)
-
-#Create a callback function for handling the input that is about to pass to the People Perceptor
-def people_input_callback(input_data, pom, config):
-    #Just take the frame from the incoming Input Stream and send it onward - no need to modify the frame
-    frame = input_data.data.copy()
-    return frame
-    
-#Create a callback function for handling the "New Person" event from the People Perceptor
-#Just print the person ID to the console
-def new_person_callback(person_id):
-    print("New person: {}".format(person_id))
-    
-#Instantiate a People Perceptor
-people_ai = PeoplePerceptor()
-
-#Subscribe to the "New Person" event from the People Perceptor and use our callback from above as the handler
-people_ai.on("new_person_entered_scene", new_person_callback)
-
-#Add the People Perceptor instance to the Pipeline and use the input callback from above as the input preparation handler
-pipeline.add_perceptor("peeps", people_ai, input_callback=people_input_callback)
-
-#Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
-pipeline.set_perceptor_config("peeps", "show_pose_landmark_dots", True)
-pipeline.set_perceptor_config("peeps", "pose_landmark_dot_size", 2)
-pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", "0,255,0")
-
-#Start the Pipeline
-pipeline.run()
-```
-
-## Save your Python file to your Raspberry Pi
-
-If you are using VS Code remote development, then your file should automatically save on the device when you save in VS Code. If you are manually adding your file to your Raspberry Pi, copy the file to the device now.
-
-## Add a Dockerfile to the same directory as your Python file
-
-You will build a Docker container to run your Darcy AI application. You only need your Python file and a Dockerfile to build the container. Make sure you create this Dockerfile in the same directory as your Python file and change the name from YOURFILE.py to the actual name of your file.
-```
-FROM edgeworx/darcy-ai-coral-armv7l:dev
-
-RUN python3 -m pip install --upgrade darcyai-engine
-RUN python3 -m pip install --upgrade darcyai-coral
-
-COPY YOURFILE.py /src/my_app.py
-
-ENTRYPOINT ["/bin/bash", "-c", "cd /src/ && python3 -u ./my_app.py"]
+sudo usermod -aG docker Pi
 ```
 
 ## Build your Docker container
 
-Use the following command to build your Docker container. It may take 10 or 15 minutes if you are building for the first time and you do not have a very fast internet connection. This is because the underlying container base images will need to be downloaded. After the first build, this process should only take a minute or two.
-```
-sudo docker build -t darcydev/my-people-ai-app:1.0.0 .
-```
-
-## Run your application
-
-Use this Docker command to run your application container right away. You can also use this Docker container with the [Edgeworx Cloud](https://cloud.edgeworx.io) to deploy and manage the application.
-```
-sudo docker run -d --privileged -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
-```
-
-## View your real-time Darcy AI application video output
-
-Once your application container is running, you can view the live video feed by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your Raspberry Pi.
-```
-https://YOUR.DEVICE.IP.ADDRESS:3456/
-```
