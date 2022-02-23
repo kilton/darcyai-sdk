@@ -20,8 +20,7 @@ Click on the "plus button" and choose "app" to deploy a new application to your 
 
 ## Open the Darcy AI Explorer
 
-This part is quite easy.
-Once your application container is running, you can view the live video feed by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your Raspberry Pi.
+Once your Darcy AI Explorer app is running, you can view the UI and use the app by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your device. See Darcy in action and explore what she can do!
 ```
-https://YOUR.DEVICE.IP.ADDRESS:3456/
+http://YOUR.DEVICE.IP.ADDRESS:5000/
 ```
