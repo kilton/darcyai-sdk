@@ -25,4 +25,33 @@ Once you are in your Darcy Cloud account, add your device as a node in your curr
 
 ## Create your application YAML
 
+Here is a sample YAML file to work with.
+
+```
+kind: Application
+apiVersion: iofog.org/v3
+metadata:
+  name: your-application-name
+spec:
+  microservices:
+    - name: your-microservice-name
+      agent:
+        name: your-darcy-cloud-node-name
+      images:
+        arm: 'YOUR_ORGANIZATION/YOUR_APP:tag.goes.here'
+        x86: 'YOUR_ORGANIZATION/YOUR_APP:tag.goes.here'
+      container:
+        rootHostAccess: true
+        ports: []
+        volumes:
+          - containerDestination: /dev
+            hostDestination: /dev
+            type: bind
+            accessMode: rw
+```
+
+You can find this sample YAMl file in the `examples/deploy/` directory called [app_deployment.yml](./examples/deploy/app_deployment.yml).
+
+Your application deployment YAML file contains the information that the Darcy Cloud uses to load and run your Darcy AI application on any device. Replace the placeholder fields with your own information and save the file with whatever file name you like, such as `my-app-deploy.yml`. 
+
 ## Deploy your Darcy AI application

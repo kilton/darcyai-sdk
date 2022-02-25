@@ -1,24 +1,18 @@
 kind: Application
 apiVersion: iofog.org/v3
 metadata:
-  name: darcy-ai-explorer
+  name: your-application-name
 spec:
   microservices:
-    - name: darcy-ai-explorer
+    - name: your-microservice-name
       agent:
-        name: ''
+        name: your-darcy-cloud-node-name
       images:
-        arm: 'darcyai/darcy-ai-explorer:0.0.6'
-        x86: 'darcyai/darcy-ai-explorer:0.0.6'
+        arm: 'YOUR_ORGANIZATION/YOUR_APP:tag.goes.here'
+        x86: 'YOUR_ORGANIZATION/YOUR_APP:tag.goes.here'
       container:
         rootHostAccess: true
-        ports:
-          - external: 5001
-            internal: 5000
-            public:
-              schemes:
-                - https
-              protocol: http
+        ports: []
         volumes:
           - containerDestination: /dev
             hostDestination: /dev
