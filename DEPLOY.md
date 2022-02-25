@@ -17,6 +17,12 @@ Once you have a new identifier for your Darcy AI application container and you h
 
 ## Add your devices to the Darcy Cloud
 
+Use the Darcy Cloud to manage your device and your edge AI applications. If you don't already have an account, you can create one now for free. Create an account or log in at [https://cloud.darcy.ai](https://cloud.darcy.ai).
+
+Once you are in your Darcy Cloud account, add your device as a node in your current project. You can use any of several methods to add a node, such as the "add node" button or the "plus button" in the bottom left. Follow the instructions in the pop-up window to add your device as a node.
+
+<img src="./docs/img/darcy-cloud-add-node-button.png" height="100" /> <img src="./docs/img/darcy-cloud-plus-node.png" height="100" /> <img src="./docs/img/darcy-cloud-plus-item-button.png" height="100" />
+
 ## Create your application YAML
 
 ## Deploy your Darcy AI application
