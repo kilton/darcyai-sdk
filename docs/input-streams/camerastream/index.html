@@ -96,6 +96,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#stream">stream</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get_video_inputs">get_video_inputs</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -208,6 +210,18 @@
 <pre><code class="language-python">&gt;&gt;&gt; from darcyai.input.camera_stream import CameraStream
 &gt;&gt;&gt; usb_camera = CameraStream(video_device=&quot;/dev/video0&quot;)
 &gt;&gt;&gt; usb_camera.stream()
+</code></pre>
+<p><a id="darcyai.input.camera_stream.CameraStream.get_video_inputs"></a></p>
+<h4 id="get_video_inputs">get_video_inputs</h4>
+<pre><code class="language-python">@staticmethod
+def get_video_inputs()
+</code></pre>
+<p>Gets the available video inputs.</p>
+<p><strong>Returns</strong></p>
+<p><code>int[]</code>: A list of strings.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; from darcyai.input.camera_stream import CameraStream
+&gt;&gt;&gt; CameraStream.get_video_inputs()
 </code></pre>
               
             </div>
