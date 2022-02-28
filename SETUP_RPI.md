@@ -112,7 +112,7 @@ sudo usermod -aG docker pi
 
 ## Install Google Coral software libraries
 
-You need the PyCoral and LibEdgeTPU software libraries installed on your Raspberry Pi. Follow the guide provided by Google and use the sections marked as "for Linux".
+You need the PyCoral and LibEdgeTPU software libraries installed on your Raspberry Pi. Follow the guide provided by Google and use the sections marked as "on Linux".
 
 [https://coral.ai/docs/accelerator/get-started/#requirements](https://coral.ai/docs/accelerator/get-started/#requirements)
 
