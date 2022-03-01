@@ -68,19 +68,19 @@ Open a command line terminal or SSH into your Raspberry Pi and type `sudo raspi-
 
 ## Python version
 
-Python 3.9.x should already be installed in your Raspberry Pi. You can check the version by running the command `python --version`.
+Python 3.9.x should already be installed in your Raspberry Pi. You can check the version by running the command `python --version`. You will need Python 3.5.x or greater to build with Darcy AI.
 
 ## Numpy package for Python
 
 You will need the Numpy package for Python. Version 1.19.x should already be installed. You can check the version with the command `pip list | grep numpy` which will search for `numpy` in the entire list of installed Python packages.
 
-If you do not have Numpy you can install it with the command `pip install numpy`.
+If you do not have Numpy you can install it with the command `pip install numpy`. You should have Numpy 1.19.x or greater to build with Darcy AI.
 
 ## Pillow package for Python
 
 You will need the Pillow package for Python. Version 8.1.x should already be installed. You can check the version with the command `pip list | grep Pillow`.
 
-If you do not have Pillow installed, you can install it with `pip install Pillow`.
+If you do not have Pillow installed, you can install it with `pip install Pillow`. You should have Pillow 8.1.x or greater to build with Darcy AI.
 
 ## imutils package for Python
 
