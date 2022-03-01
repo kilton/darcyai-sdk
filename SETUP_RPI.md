@@ -118,7 +118,7 @@ You need the PyCoral and Edge TPU runtime software libraries installed on your R
 
 ## Build OpenCV on your Raspberry Pi
 
-This step is the most time consuming. Fortunately, if you use the convenient script provided by Q-Engineering about one third down the page, you should find it fairly easy to perform the build and installation of this very important piece of software.
+This step is the most time consuming. Fortunately, if you use the convenient script provided by Q-Engineering, you should find it fairly easy to perform the build and installation of this very important piece of software. Start by making sure you have a large enough swap file. If you are using a Raspberry Pi 4 with 8GB of RAM then you might not need this step. A larger swap file allocation allows the RPi to use disk space in place of RAM. A lot of RAM is needed to build OpenCV. After you follow the swap file setup steps, you will find the convenient build script about one third down the page.
 
 Expect to spend a couple of hours building OpenCV on your Raspberry Pi. Once this step is completed, you will have a modern version of OpenCV that is optimized for your Raspberry Pi board. This is worth doing, as you will use OpenCV in almost every computer vision application.
 
