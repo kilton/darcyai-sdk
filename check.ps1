@@ -92,3 +92,5 @@ Check-OpenCVVersion
 
 Check-PythonPackage "pycoral"
 Check-PythonPackage "darcyai"
+
+Write-Host "Darcy AI development environment is ready"

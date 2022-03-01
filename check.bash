@@ -53,3 +53,5 @@ check_opencv_version
 
 check_python_package pycoral
 check_python_package darcyai
+
+echo "Darcy AI development environment is ready"
