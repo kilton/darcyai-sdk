@@ -10,13 +10,13 @@ Use the Darcy Cloud to manage your device and your edge AI applications. If you 
 
 Once you are in your Darcy Cloud account, add your device as a node in your current project. You can use any of several methods to add a node, such as the "add node" button or the "plus button" in the bottom left. Follow the instructions in the pop-up window to add your device as a node.
 
-<img src="./docs/img/darcy-cloud-add-node-button.png" height="100" /> <img src="./docs/img/darcy-cloud-plus-node.png" height="100" /> <img src="./docs/img/darcy-cloud-plus-item-button.png" height="100" />
+<img src="./darcy-cloud-add-node-button.png" height="100" /> <img src="./darcy-cloud-plus-node.png" height="100" /> <img src="./darcy-cloud-plus-item-button.png" height="100" />
 
 ## Deploy the Darcy AI Explorer application
 
 Click on the "plus button" and choose "app" to deploy a new application to your device. In the pop-up choose the "Darcy AI Explorer App" and then click "Next". Choose your device from the drop-down menu and then click "Deploy". The Darcy AI Explorer application will begin to download to your device. You can track the status of the app in the Darcy Cloud UI. When the app is listed as "Running" you can proceed to the next step. Depending on the Internet connection speed of your device, it may take about 15 minutes for the Darcy AI Explorer app to download and start on your device.
 
-<img src="./docs/img/darcy-cloud-explorer-app-deploy.png" />
+<img src="./darcy-cloud-explorer-app-deploy.png" />
 
 ## Open the Darcy AI Explorer
 
