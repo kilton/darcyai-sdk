@@ -241,7 +241,7 @@ sudo docker build -t darcydev/my-people-ai-app:1.0.0 .
 
 Use this Docker command to run your application container right away. You can also use this Docker container with the [Darcy Cloud](https://cloud.darcy.ai) to deploy and manage the application.
 ```
-sudo docker run -d --privileged -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
+sudo docker run -d --privileged --net=host -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
 ```
 
 ## View your real-time Darcy AI application video output
