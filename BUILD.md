@@ -39,6 +39,11 @@ If you don’t have the `darcyai` library installed yet, you can install it with
 pip install darcyai
 ```
 
+If you have multiple versions of Python on your system, you may need to install the `darcyai` library using the Python3 version of PIP as follows:
+```
+pip3 install darcyai
+```
+
 ## Add the Pipeline, Input Stream, and Output Stream objects
 
 This part is quite easy. Just follow the comments to learn more about these 3 important lines of code.

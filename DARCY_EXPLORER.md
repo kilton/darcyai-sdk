@@ -8,9 +8,9 @@ Follow the steps in this guide to get your device connected to the [Darcy Cloud]
 
 Use the Darcy Cloud to manage your device and your edge AI applications. If you don't already have an account, you can create one now for free. Create an account or log in at [https://cloud.darcy.ai](https://cloud.darcy.ai).
 
-Once you are in your Darcy Cloud account, add your device as a node in your current project. You can use any of several methods to add a node, such as the "add node" button or the "plus button" in the bottom left. Follow the instructions in the pop-up window to add your device as a node.
+Once you are in your Darcy Cloud account, add your device as a node in your current project. Use the "plus button" in the bottom left to add a node to your project. Follow the instructions in the pop-up window to add your device as a node.
 
-<img src="./darcy-cloud-add-node-button.png" height="100" /> <img src="./darcy-cloud-plus-node.png" height="100" /> <img src="./darcy-cloud-plus-item-button.png" height="100" />
+<img src="./darcy-cloud-plus-item-button.png" height="100" />
 
 ## Deploy the Darcy AI Explorer application
 
@@ -20,7 +20,7 @@ Click on the "plus button" and choose "app" to deploy a new application to your 
 
 ## Open the Darcy AI Explorer
 
-Once your Darcy AI Explorer app is running, you can view the UI and use the app by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your device. See Darcy in action and explore what she can do!
+Once your Darcy AI Explorer app is running, you can view the UI and use the app by visiting the following URL in any browser. Replace `YOUR.DEVICE.IP.ADDRESS` with the actual IP address of your device. See Darcy AI in action and explore what it can do!
 ```
 http://YOUR.DEVICE.IP.ADDRESS:5000/
 ```

@@ -6,7 +6,7 @@ To browse this document and all of the other documentation on a local web server
 
 ## Introducing the Darcy AI platform
 
-Darcy is an artificial intelligence (AI) that is focused on real-time interactions with the world around her. She has a variety of senses, such as vision and hearing, that allow her to perceive her environment. You can give Darcy additional senses, such as LiDAR or thermal vision, to expand her capabilities. Darcy is present in every device where a Darcy AI application is running. She runs entirely in each device. No data needs to leave the device and no computation is done in the cloud.
+Darcy is an artificial intelligence (AI) that is focused on real-time interactions with the world. It has a variety of senses, such as vision and hearing, that allow it to perceive the local environment. You can give Darcy additional senses, such as LiDAR or thermal vision, to expand its capabilities. Darcy is present in every device where a Darcy AI application is running. It runs entirely in each device. No data needs to leave the device and no computation is done in the cloud.
 
 Darcy was designed to bring AI technology into the real world while keeping privacy and security as top priorities. Building real-time AI applications is very challenging. The Darcy AI SDK is a developer platform for computer vision and other applications which handles all of the most difficult and repetitive problems for you so you can focus on building amazing solutions.
 
@@ -51,7 +51,7 @@ Run the shell script [check.bash](./check.bash) to verify that your current envi
 
 If you haven't already become familiar with the Darcy AI platform terminology, check out this [Terminology Guide](./TERMINOLOGY.md) to get up to speed quickly.
 
-The best way to get started with Darcy is to see her in action. Start by trying out the Darcy AI Explorer application in the [Darcy Explorer Guide](./DARCY_EXPLORER.md).
+The best way to get started with Darcy is to see it in action. Start by trying out the Darcy AI Explorer application in the [Darcy Explorer Guide](./DARCY_EXPLORER.md).
 
 When you are ready to create, you can launch your Darcy AI developer journey with the [Getting Started Guide](./GETTING_STARTED.md).
 
