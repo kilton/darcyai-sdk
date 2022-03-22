@@ -14,10 +14,13 @@ The second part of the identifier is the container name. It comes after the `/` 
 
 Once you have a new identifier for your Darcy AI application container and you have built the container image, you can add it to Docker Hub using the command `docker push YOUR_ORGANIZATION/YOUR_APP:tag.goes.here` where you have replaced the placeholders with the appropriate information, of course. You will use this identifier in your application deployment YAML file below.
 
+## About the Darcy Cloud
+
+The Darcy Cloud gives you management of all your edge devices and edge applications in one place. You can open an SSH shell session on demand, deploy applications, and see the health and status for every device. All of this functionality works no matter where your edge devices are physically located, even when they are behind NAT layers and firewalls. Use the Darcy Cloud to make building, deploying, and debugging easier, and then use it to operate your edge AI applications in production systems.
 
 ## Add your devices to the Darcy Cloud
 
-Use the Darcy Cloud to manage your device and your edge AI applications. If you don't already have an account, you can create one now for free. Create an account or log in at [https://cloud.darcy.ai](https://cloud.darcy.ai).
+If you don't already have an account, you can create one now for free. Create an account or log in at [https://cloud.darcy.ai](https://cloud.darcy.ai).
 
 Once you are in your Darcy Cloud account, add your device as a node in your current project. Use the "plus button" in the bottom left to add a node. Follow the instructions in the pop-up window to add your device as a node.
 
