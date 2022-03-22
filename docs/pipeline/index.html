@@ -286,13 +286,18 @@
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.add_perceptor"></a></p>
 <h4 id="add_perceptor">add_perceptor</h4>
-<pre><code class="language-python">def add_perceptor(name: str, perceptor: Perceptor, input_callback: Callable[[StreamData,
-                                                PerceptionObjectModel,
-                                                ConfigRegistry],
-                                               Any] = None, output_callback: Callable[[Any,
-                                                 PerceptionObjectModel,
-                                                 ConfigRegistry],
-                                                Any] = None, parent: str = None, multi: bool = False, accelerator_idx: Union[int, None] = None, default_config: Dict[str, Any] = None) -&gt; None
+<pre><code class="language-python">def add_perceptor(name: str,
+                  perceptor: Perceptor,
+                  input_callback: Callable[
+                      [StreamData, PerceptionObjectModel, ConfigRegistry],
+                      Any] = None,
+                  output_callback: Callable[
+                      [Any, PerceptionObjectModel, ConfigRegistry],
+                      Any] = None,
+                  parent: str = None,
+                  multi: bool = False,
+                  accelerator_idx: Union[int, None] = None,
+                  default_config: Dict[str, Any] = None) -&gt; None
 </code></pre>
 <p>Adds a new Perceptor to the pipeline.</p>
 <p><strong>Arguments</strong></p>
@@ -330,13 +335,17 @@
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.add_perceptor_before"></a></p>
 <h4 id="add_perceptor_before">add_perceptor_before</h4>
-<pre><code class="language-python">def add_perceptor_before(name_to_insert_before: str, name: str, perceptor: Perceptor, input_callback: Callable[[StreamData,
-                                                       PerceptionObjectModel,
-                                                       ConfigRegistry],
-                                                      Any] = None, output_callback: Callable[[Any,
-                                                        PerceptionObjectModel,
-                                                        ConfigRegistry],
-                                                       Any] = None, multi: bool = False, accelerator_idx: Union[int, None] = None, default_config: dict = None) -&gt; None
+<pre><code class="language-python">def add_perceptor_before(
+        name_to_insert_before: str,
+        name: str,
+        perceptor: Perceptor,
+        input_callback: Callable[
+            [StreamData, PerceptionObjectModel, ConfigRegistry], Any] = None,
+        output_callback: Callable[[Any, PerceptionObjectModel, ConfigRegistry],
+                                  Any] = None,
+        multi: bool = False,
+        accelerator_idx: Union[int, None] = None,
+        default_config: dict = None) -&gt; None
 </code></pre>
 <p>Adds a new Perceptor to the pipeline.</p>
 <p><strong>Arguments</strong></p>
@@ -375,13 +384,17 @@
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.add_perceptor_after"></a></p>
 <h4 id="add_perceptor_after">add_perceptor_after</h4>
-<pre><code class="language-python">def add_perceptor_after(name_to_insert_after: str, name: str, perceptor: Perceptor, input_callback: Callable[[StreamData,
-                                                      PerceptionObjectModel,
-                                                      ConfigRegistry],
-                                                     Any] = None, output_callback: Callable[[Any,
-                                                       PerceptionObjectModel,
-                                                       ConfigRegistry],
-                                                      Any] = None, multi: bool = False, accelerator_idx: Union[int, None] = None, default_config: dict = None) -&gt; None
+<pre><code class="language-python">def add_perceptor_after(
+        name_to_insert_after: str,
+        name: str,
+        perceptor: Perceptor,
+        input_callback: Callable[
+            [StreamData, PerceptionObjectModel, ConfigRegistry], Any] = None,
+        output_callback: Callable[[Any, PerceptionObjectModel, ConfigRegistry],
+                                  Any] = None,
+        multi: bool = False,
+        accelerator_idx: Union[int, None] = None,
+        default_config: dict = None) -&gt; None
 </code></pre>
 <p>Adds a new Perceptor to the pipeline.</p>
 <p><strong>Arguments</strong></p>
@@ -420,13 +433,17 @@
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.add_parallel_perceptor"></a></p>
 <h4 id="add_parallel_perceptor">add_parallel_perceptor</h4>
-<pre><code class="language-python">def add_parallel_perceptor(name_to_insert_in_parallel_with: str, name: str, perceptor: Perceptor, input_callback: Callable[[StreamData,
-                                                         PerceptionObjectModel,
-                                                         ConfigRegistry],
-                                                        Any] = None, output_callback: Callable[[Any,
-                                                          PerceptionObjectModel,
-                                                          ConfigRegistry],
-                                                         Any] = None, multi: bool = False, accelerator_idx: Union[int, None] = None, default_config: dict = None) -&gt; None
+<pre><code class="language-python">def add_parallel_perceptor(
+        name_to_insert_in_parallel_with: str,
+        name: str,
+        perceptor: Perceptor,
+        input_callback: Callable[
+            [StreamData, PerceptionObjectModel, ConfigRegistry], Any] = None,
+        output_callback: Callable[[Any, PerceptionObjectModel, ConfigRegistry],
+                                  Any] = None,
+        multi: bool = False,
+        accelerator_idx: Union[int, None] = None,
+        default_config: dict = None) -&gt; None
 </code></pre>
 <p>Adds a new Perceptor to the pipeline.</p>
 <p><strong>Arguments</strong></p>
@@ -485,9 +502,11 @@
 #### add\_output\_stream
 
 ```python
-def add_output_stream(name: str, callback: Callable[[PerceptionObjectModel,
-                                              StreamData],
-                                             Any], output_stream: OutputStream, default_config: dict = None) -&gt; None
+def add_output_stream(name: str,
+                      callback: Callable[[PerceptionObjectModel, StreamData],
+                                         Any],
+                      output_stream: OutputStream,
+                      default_config: dict = None) -&gt; None
 </code></pre>
 <p>Adds an OutputStream to the pipeline.</p>
 <p><strong>Arguments</strong></p>
@@ -673,7 +692,9 @@ def add_output_stream(name: str, callback: Callable[[PerceptionObjectModel,
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.run_perceptor"></a></p>
 <h4 id="run_perceptor">run_perceptor</h4>
-<pre><code class="language-python">def run_perceptor(perceptor: Perceptor, input_data: Any, multi: bool = False) -&gt; Any
+<pre><code class="language-python">def run_perceptor(perceptor: Perceptor,
+                  input_data: Any,
+                  multi: bool = False) -&gt; Any
 </code></pre>
 <p>Runs the Perceptor.</p>
 <p><strong>Arguments</strong></p>
@@ -725,7 +746,8 @@ def add_output_stream(name: str, callback: Callable[[PerceptionObjectModel,
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.get_pulse_performance_metrics"></a></p>
 <h4 id="get_pulse_performance_metrics">get_pulse_performance_metrics</h4>
-<pre><code class="language-python">def get_pulse_performance_metrics(pulse_number: Union[int, None] = None) -&gt; Dict[str, Any]
+<pre><code class="language-python">def get_pulse_performance_metrics(
+        pulse_number: Union[int, None] = None) -&gt; Dict[str, Any]
 </code></pre>
 <p>Gets the performance metrics of the pipeline for specific pulse.</p>
 <p><strong>Arguments</strong></p>
@@ -745,7 +767,9 @@ def add_output_stream(name: str, callback: Callable[[PerceptionObjectModel,
 </code></pre>
 <p><a id="darcyai.pipeline.Pipeline.get_perceptor_performance_metrics"></a></p>
 <h4 id="get_perceptor_performance_metrics">get_perceptor_performance_metrics</h4>
-<pre><code class="language-python">def get_perceptor_performance_metrics(name: str, pulse_number: Union[int, None] = None) -&gt; Dict[str, Any]
+<pre><code class="language-python">def get_perceptor_performance_metrics(name: str,
+                                      pulse_number: Union[int, None] = None
+                                      ) -&gt; Dict[str, Any]
 </code></pre>
 <p>Gets the performance metrics of the pipeline for specific perceptor.</p>
 <p><strong>Arguments</strong></p>
