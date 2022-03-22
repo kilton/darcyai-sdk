@@ -59,6 +59,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#environment-setup">Environment setup</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#create-your-application-python-file-and-import-libraries">Create your application Python file and import libraries</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#add-the-pipeline-input-stream-and-output-stream-objects">Add the Pipeline, Input Stream, and Output Stream objects</a>
@@ -101,15 +103,18 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../config/">Config</a>
-                    </li>
-                </ul>
-                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../perceptionobjectmodel/">PerceptionObjectModel</a>
                     </li>
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../serializable/">Serializable</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pipeline Config</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pipeline-config/config/">Config</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pipeline-config/rgb/">RGB</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Input Streams</span></p>
@@ -190,10 +195,13 @@
     - <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
     - <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">https://marketplace.visualstudio.com/items?itemName=ms-python.python</a>
 - A Raspberry Pi with an attached video camera and Google Coral edge TPU
-- Set up your VS Code environment to develop on your Darcy Cam or Raspberry Pi remotely
+- Set up your VS Code environment to develop on your Raspberry Pi remotely
     - <a href="https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/">https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/</a>
 - Python 3.5+
 - Docker on your Raspberry Pi</p>
+<h2 id="environment-setup">Environment setup</h2>
+<p>To check if your Raspberry Pi meets all of the requirements for building and debugging Darcy AI applications, run the system check script <a href="https://github.com/darcyai/darcyai-sdk/blob/master/check.bash">check.bash</a>.</p>
+<p>If you need to setup your Raspberry Pi as a Darcy AI development environment, follow the <a href="https://github.com/darcyai/darcyai-sdk/blob/master/SETUP_RPI.md">Raspberry Pi Environment Setup Guide</a>.</p>
 <h2 id="create-your-application-python-file-and-import-libraries">Create your application Python file and import libraries</h2>
 <p>You only need a single Python file to build a Darcy AI application. Open a new .py file in VS Code and name it whatever you want. Then add the following statements at the top to include the Darcy AI libraries and some additional helpful libraries:</p>
 <pre><code>import cv2
@@ -207,6 +215,9 @@ from darcyai.pipeline import Pipeline
 </code></pre>
 <p>If you don’t have the <code>darcyai</code> library installed yet, you can install it with PIP package installer for Python using the following commands, which you should run both on your development workstation and on your Raspberry Pi where you will be running your application:</p>
 <pre><code>pip install darcyai
+</code></pre>
+<p>If you have multiple versions of Python on your system, you may need to install the <code>darcyai</code> library using the Python3 version of PIP as follows:</p>
+<pre><code>pip3 install darcyai
 </code></pre>
 <h2 id="add-the-pipeline-input-stream-and-output-stream-objects">Add the Pipeline, Input Stream, and Output Stream objects</h2>
 <p>This part is quite easy. Just follow the comments to learn more about these 3 important lines of code.</p>
@@ -374,7 +385,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;cd /src/ &amp;&amp; pyt
 </code></pre>
 <h2 id="run-your-application">Run your application</h2>
 <p>Use this Docker command to run your application container right away. You can also use this Docker container with the <a href="https://cloud.darcy.ai">Darcy Cloud</a> to deploy and manage the application.</p>
-<pre><code>sudo docker run -d --privileged -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
+<pre><code>sudo docker run -d --privileged --net=host -p 3456:3456 -p 8080:8080 -v /dev:/dev darcydev/my-people-ai-app:1.0.0
 </code></pre>
 <h2 id="view-your-real-time-darcy-ai-application-video-output">View your real-time Darcy AI application video output</h2>
 <p>Once your application container is running, you can view the live video feed by visiting the following URL in any browser. Replace <code>YOUR.DEVICE.IP.ADDRESS</code> with the actual IP address of your Raspberry Pi.</p>

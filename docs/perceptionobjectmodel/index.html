@@ -70,10 +70,6 @@
                     <li class="toctree-l1"><a class="reference internal" href="../streamdata/">StreamData</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../config/">Config</a>
-                    </li>
-                </ul>
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">PerceptionObjectModel</a>
     <ul class="current">
@@ -95,6 +91,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#get_pulse_number">get_pulse_number</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set_pps">set_pps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get_pps">get_pps</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -102,6 +102,13 @@
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../serializable/">Serializable</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pipeline Config</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pipeline-config/config/">Config</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../pipeline-config/rgb/">RGB</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Input Streams</span></p>
@@ -248,6 +255,22 @@
 <p>Get the pulse number for the perception object model.</p>
 <p><strong>Returns</strong></p>
 <p><code>int</code>: The pulse number.</p>
+<p><a id="darcyai.perception_object_model.PerceptionObjectModel.set_pps"></a></p>
+<h4 id="set_pps">set_pps</h4>
+<pre><code class="language-python">def set_pps(pps: int) -&gt; None
+</code></pre>
+<p>Set the pps for the perception object model.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>pps</strong> (<code>int</code>): The pps.</li>
+</ul>
+<p><a id="darcyai.perception_object_model.PerceptionObjectModel.get_pps"></a></p>
+<h4 id="get_pps">get_pps</h4>
+<pre><code class="language-python">def get_pps() -&gt; int
+</code></pre>
+<p>Get the pps for the perception object model.</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The pps.</p>
               
             </div>
           </div>
@@ -258,7 +281,7 @@
         <a href="../serializable/" class="btn btn-neutral float-right" title="Serializable">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../config/" class="btn btn-neutral" title="Config"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../streamdata/" class="btn btn-neutral" title="StreamData"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -284,7 +307,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../config/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../streamdata/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../serializable/" style="color: #fcfcfc">Next &raquo;</a></span>
