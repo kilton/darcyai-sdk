@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>ObjectDetectionPerceptor - Darcy AI</title>
+  <title>RGB - Darcy AI</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "ObjectDetectionPerceptor";
-    var mkdocs_page_input_path = "coral-perceptors/objectdetectionperceptor.md";
+    var mkdocs_page_name = "RGB";
+    var mkdocs_page_input_path = "pipeline-config/rgb.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,10 +79,28 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Pipeline Config</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../pipeline-config/config/">Config</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../config/">Config</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../pipeline-config/rgb/">RGB</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">RGB</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#rgb-objects">RGB Objects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#red">red</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#green">green</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blue">blue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#to_hex">to_hex</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#from_string">from_string</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#from_hex_string">from_hex_string</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Input Streams</span></p>
@@ -112,24 +130,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Coral Perceptors</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">ObjectDetectionPerceptor</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#objectdetectionperceptor-objects">ObjectDetectionPerceptor Objects</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#run">run</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#load">load</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../peopleperceptor/">PeoplePerceptor</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../peoplepom/">PeoplePOM</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coral-perceptors/peoplepom/">PeoplePOM</a>
                     </li>
                 </ul>
       </div>
@@ -153,11 +161,11 @@
     
       
         
-          <li>Coral Perceptors &raquo;</li>
+          <li>Pipeline Config &raquo;</li>
         
       
     
-    <li>ObjectDetectionPerceptor</li>
+    <li>RGB</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -169,43 +177,74 @@
           <div role="main">
             <div class="section">
               
-                <p><a id="darcyai.perceptor.coral.object_detection_perceptor"></a></p>
-<h1 id="darcyaiperceptorcoralobject_detection_perceptor">darcyai.perceptor.coral.object_detection_perceptor</h1>
-<p><a id="darcyai.perceptor.coral.object_detection_perceptor.ObjectDetectionPerceptor"></a></p>
-<h2 id="objectdetectionperceptor-objects">ObjectDetectionPerceptor Objects</h2>
-<pre><code class="language-python">class ObjectDetectionPerceptor(CoralPerceptorBase)
+                <p><a id="darcyai.config"></a></p>
+<h1 id="darcyaiconfig">darcyai.config</h1>
+<p><a id="darcyai.config.RGB"></a></p>
+<h2 id="rgb-objects">RGB Objects</h2>
+<pre><code class="language-python">class RGB()
 </code></pre>
-<p>ObjectDetectionPerceptor is a class that implements the Perceptor interface for
-object detection.</p>
+<p>Class to hold the configuration for the RGB.</p>
 <p><strong>Arguments</strong>:</p>
 <ul>
-<li><code>threshold</code> <em>float</em> - The threshold for object detection.</li>
-<li><code>labels_file</code> <em>str</em> - The path to the labels file.</li>
-<li><code>**kwargs</code> - Keyword arguments to pass to Perceptor.</li>
+<li><code>red</code> <em>int</em> - The red value.</li>
+<li><code>green</code> <em>int</em> - The green value.</li>
+<li><code>blue</code> <em>int</em> - The blue value.</li>
 </ul>
-<p><a id="darcyai.perceptor.coral.object_detection_perceptor.ObjectDetectionPerceptor.run"></a></p>
-<h4 id="run">run</h4>
-<pre><code class="language-python">def run(input_data: Any, config: ConfigRegistry = None) -&gt; (List[Any], List[str])
+<p><a id="darcyai.config.RGB.red"></a></p>
+<h4 id="red">red</h4>
+<pre><code class="language-python">def red() -&gt; int
 </code></pre>
-<p>Runs the object detection model on the input data.</p>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><code>input_data</code> <em>Any</em> - The input data to run the model on.</li>
-<li><code>config</code> <em>ConfigRegistry</em> - The configuration for the Perceptor.</li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<p>(list[Any], list(str)): A tuple containing the detected objects and the labels.</p>
-<p><a id="darcyai.perceptor.coral.object_detection_perceptor.ObjectDetectionPerceptor.load"></a></p>
-<h4 id="load">load</h4>
-<pre><code class="language-python">def load(accelerator_idx: [int, None]) -&gt; None
+<p>Returns the red value.</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The red value.</p>
+<p><a id="darcyai.config.RGB.green"></a></p>
+<h4 id="green">green</h4>
+<pre><code class="language-python">def green() -&gt; int
 </code></pre>
-<p>Loads the object detection model.</p>
-<p><strong>Arguments</strong>:</p>
+<p>Returns the green value.</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The green value.</p>
+<p><a id="darcyai.config.RGB.blue"></a></p>
+<h4 id="blue">blue</h4>
+<pre><code class="language-python">def blue() -&gt; int
+</code></pre>
+<p>Returns the blue value.</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The blue value.</p>
+<p><a id="darcyai.config.RGB.to_hex"></a></p>
+<h4 id="to_hex">to_hex</h4>
+<pre><code class="language-python">def to_hex() -&gt; str
+</code></pre>
+<p>Returns the hex value of the RGB.</p>
+<p><strong>Returns</strong></p>
+<p><code>str</code>: The hex value.</p>
+<p><a id="darcyai.config.RGB.from_string"></a></p>
+<h4 id="from_string">from_string</h4>
+<pre><code class="language-python">@staticmethod
+def from_string(rgb: str) -&gt; &quot;RGB&quot;
+</code></pre>
+<p>Creates an RGB object from a comma separated RGB string.</p>
+<p><strong>Arguments</strong></p>
 <ul>
-<li><code>accelerator_idx</code> <em>int</em> - The index of the Edge TPU to use.</li>
+<li><strong>rgb</strong> (<code>str</code>): The comma separated RGB string.</li>
 </ul>
-<p><strong>Returns</strong>:</p>
-<p>None</p>
+<p><strong>Returns</strong></p>
+<p><code>RGB</code>: The RGB object.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; RGB.from_string(&quot;255,255,255&quot;)
+</code></pre>
+<p><a id="darcyai.config.RGB.from_hex_string"></a></p>
+<h4 id="from_hex_string">from_hex_string</h4>
+<pre><code class="language-python">@staticmethod
+def from_hex_string(hex_rgb: str) -&gt; &quot;RGB&quot;
+</code></pre>
+<p>Creates an RGB object from a hex RGB string.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hex_rgb</strong> (<code>str</code>): The hex RGB string.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>RGB</code>: The RGB object.</p>
               
             </div>
           </div>
@@ -213,10 +252,10 @@ object detection.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../peopleperceptor/" class="btn btn-neutral float-right" title="PeoplePerceptor">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../input-streams/inputstream/" class="btn btn-neutral float-right" title="InputStream">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../imageclassificationperceptor/" class="btn btn-neutral" title="ImageClassificationPerceptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../config/" class="btn btn-neutral" title="Config"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -242,10 +281,10 @@ object detection.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../imageclassificationperceptor/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../config/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../peopleperceptor/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../input-streams/inputstream/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
