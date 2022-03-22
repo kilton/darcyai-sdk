@@ -52,10 +52,6 @@ You will need some hardware to run your Darcy AI application. Darcy can generall
 - 200MB available disk space (1GB or more recommended and your application size will vary)
 - Docker container runtime
 
-### Verifying system readiness
-
-Run the shell script [check.bash](./check.bash) to verify that your current environment has all of the required components to build a Darcy AI application.
-
 ### Darcy ready developer kits and edge boards
 
 - Raspberry Pi with Coral USB
