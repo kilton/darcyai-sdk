@@ -28,3 +28,7 @@ Once your Darcy AI Explorer app is running, you can view the UI and use the app 
 ```
 http://YOUR.DEVICE.IP.ADDRESS:5555/
 ```
+
+## Continue your Darcy AI exploration
+
+Now that you have a running Darcy AI application to explore, continue your journey by checking out the examples and getting started building your own application! [Darcy AI Documentation Home](./README.md)
