@@ -18,7 +18,25 @@ Use this document and the other markdown files in this directory to learn about 
 
 To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000).
 
-The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. The Darcy AI Explorer demo application is a rich and complex example that leverages nearly all of the programming interfaces that Darcy offers.
+## Examples
+
+The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. Here are some short descriptions to help you understand what examples are available. Some example applications are stored in their own code repositories to make learning and building easier.
+
+- Darcy AI Explorer - this demo application is a rich showcase of what the Darcy AI system can do. Use the source code as a model for building a full-featured production application. [https://github.com/darcyai/darcyai-explorer](https://github.com/darcyai/darcyai-explorer)
+
+- Real-time Audio Analysis - Build and deploy this Darcy AI demo application to learn how to add audio capabilities to Darcy and listen for important sounds. [Audio Analysis](./examples/audio_analysis)
+
+- Basic Darcy AI Pipeline - Use this demo application to learn the basics of creating a Darcy AI pipeline. [Basic Pipeline](./examples/basic_pipeline)
+
+- Sample Output Stream - Learn how to create a Darcy AI output stream by adding this example to your application. The example sends your Darcy AI output to an Amazon Web Services S3 bucket. [Output Stream](./examples/output_streams)
+
+- Sample Perceptors - Learn how to build your own Darcy AI perceptors with the examples in this directory. There is a basic mock perceptor that you can use as a template. There is a face detector perceptor that uses an AI model to find faces. There is also a face mask detector perceptor that checks a person's face for a mask. [Perceptors](./examples/perceptors)
+
+- Heart Rate Demo - this demo application is a good example of how to build an edge application that is made of multiple microservices that communicate with each other. [https://github.com/darcyai/heart-rate-demo](https://github.com/darcyai/heart-rate-demo)
+
+- Sample Build Files - Get a sample Dockerfile in this folder so you don't have to create one from scratch. [Build Files](./examples/build)
+
+- Sample Deployment Files - Get a sample application YAML file in this folder so you can just replace the default values and deploy your edge AI application easily. [Deployment Files](./examples/deploy)
 
 ## What you need
 
