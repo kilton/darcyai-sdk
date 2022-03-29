@@ -107,6 +107,8 @@
               </ul>
               <p class="caption"><span class="caption-text">Coral Perceptors</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../coralperceptorbase/">CoralPerceptorBase</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../imageclassificationperceptor/">ImageClassificationPerceptor</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../objectdetectionperceptor/">ObjectDetectionPerceptor</a>
@@ -115,6 +117,54 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">PeoplePOM</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#peoplepom-objects">PeoplePOM Objects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set_annotated_frame">set_annotated_frame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set_raw_frame">set_raw_frame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#set_people">set_people</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#annotatedframe">annotatedFrame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rawframe">rawFrame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#peoplecount">peopleCount</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#personinfront">personInFront</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#people">people</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#person">person</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#faceimage">faceImage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bodyimage">bodyImage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#personimage">personImage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#facesize">faceSize</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bodysize">bodySize</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wholesize">wholeSize</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bodypose">bodyPose</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bodyposehistory">bodyPoseHistory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#travelpath">travelPath</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#timeinview">timeInView</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recentlydepartedpeople">recentlyDepartedPeople</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#occludedpeople">occludedPeople</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#serialize">serialize</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
               </ul>
@@ -144,6 +194,219 @@
               
                 <p><a id="darcyai.perceptor.coral.people_perceptor_pom"></a></p>
 <h1 id="darcyaiperceptorcoralpeople_perceptor_pom">darcyai.perceptor.coral.people_perceptor_pom</h1>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM"></a></p>
+<h2 id="peoplepom-objects">PeoplePOM Objects</h2>
+<pre><code class="language-python">class PeoplePOM(Serializable)
+</code></pre>
+<p>People perceptor object model</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.set_annotated_frame"></a></p>
+<h4 id="set_annotated_frame">set_annotated_frame</h4>
+<pre><code class="language-python">def set_annotated_frame(frame)
+</code></pre>
+<p>Stores the frame annotated with the persons data</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>frame</strong> (<code>np.array</code>): The annotated frame</li>
+</ul>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.set_raw_frame"></a></p>
+<h4 id="set_raw_frame">set_raw_frame</h4>
+<pre><code class="language-python">def set_raw_frame(frame)
+</code></pre>
+<p>Stores the frame with the people data</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>frame</strong> (<code>np.array</code>): The raw frame</li>
+</ul>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.set_people"></a></p>
+<h4 id="set_people">set_people</h4>
+<pre><code class="language-python">def set_people(people)
+</code></pre>
+<p>Stores the detected people</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>people</strong> (<code>list</code>): The detected people</li>
+</ul>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.annotatedFrame"></a></p>
+<h4 id="annotatedframe">annotatedFrame</h4>
+<pre><code class="language-python">def annotatedFrame()
+</code></pre>
+<p>Returns the annotated frame</p>
+<p><strong>Returns</strong></p>
+<p><code>np.array</code>: The annotated frame</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.rawFrame"></a></p>
+<h4 id="rawframe">rawFrame</h4>
+<pre><code class="language-python">def rawFrame()
+</code></pre>
+<p>Returns the raw frame</p>
+<p><strong>Returns</strong></p>
+<p><code>np.array</code>: The raw frame</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.peopleCount"></a></p>
+<h4 id="peoplecount">peopleCount</h4>
+<pre><code class="language-python">def peopleCount()
+</code></pre>
+<p>Returns the number of people detected</p>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The number of people detected</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.personInFront"></a></p>
+<h4 id="personinfront">personInFront</h4>
+<pre><code class="language-python">def personInFront()
+</code></pre>
+<p>Returns the person in front of the camera</p>
+<p><strong>Returns</strong></p>
+<pre><code>The person in front of the camera
+</code></pre>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.people"></a></p>
+<h4 id="people">people</h4>
+<pre><code class="language-python">def people()
+</code></pre>
+<p>Returns the detected people</p>
+<p><strong>Returns</strong></p>
+<p><code>list</code>: The detected people</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.person"></a></p>
+<h4 id="person">person</h4>
+<pre><code class="language-python">def person(person_id)
+</code></pre>
+<p>Returns the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>dict</code>: The person</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.faceImage"></a></p>
+<h4 id="faceimage">faceImage</h4>
+<pre><code class="language-python">def faceImage(person_id)
+</code></pre>
+<p>Returns the face image of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>np.array</code>: The face image</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.bodyImage"></a></p>
+<h4 id="bodyimage">bodyImage</h4>
+<pre><code class="language-python">def bodyImage(person_id)
+</code></pre>
+<p>Returns the body image of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>np.array</code>: The body image</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.personImage"></a></p>
+<h4 id="personimage">personImage</h4>
+<pre><code class="language-python">def personImage(person_id)
+</code></pre>
+<p>Returns the image of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>np.array</code>: The person image</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.faceSize"></a></p>
+<h4 id="facesize">faceSize</h4>
+<pre><code class="language-python">def faceSize(person_id)
+</code></pre>
+<p>Returns the size of the face of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The size of the face</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.bodySize"></a></p>
+<h4 id="bodysize">bodySize</h4>
+<pre><code class="language-python">def bodySize(person_id)
+</code></pre>
+<p>Returns the size of the body of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The size of the body</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.wholeSize"></a></p>
+<h4 id="wholesize">wholeSize</h4>
+<pre><code class="language-python">def wholeSize(person_id)
+</code></pre>
+<p>Returns the size of the whole person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The size of the whole person</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.bodyPose"></a></p>
+<h4 id="bodypose">bodyPose</h4>
+<pre><code class="language-python">def bodyPose(person_id)
+</code></pre>
+<p>Returns the PoseNet data of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<pre><code>The PoseNet data
+</code></pre>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.bodyPoseHistory"></a></p>
+<h4 id="bodyposehistory">bodyPoseHistory</h4>
+<pre><code class="language-python">def bodyPoseHistory(person_id)
+</code></pre>
+<p>Returns the PoseNet data history of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<pre><code>The PoseNet data
+</code></pre>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.travelPath"></a></p>
+<h4 id="travelpath">travelPath</h4>
+<pre><code class="language-python">def travelPath(person_id)
+</code></pre>
+<p>Returns the travel path of the person with the given id</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<pre><code>The travel path
+</code></pre>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.timeInView"></a></p>
+<h4 id="timeinview">timeInView</h4>
+<pre><code class="language-python">def timeInView(person_id)
+</code></pre>
+<p>Returns the time the person with the given id has been in view</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>person_id</strong> (<code>str</code>): The person id</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p><code>int</code>: The time in view</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.recentlyDepartedPeople"></a></p>
+<h4 id="recentlydepartedpeople">recentlyDepartedPeople</h4>
+<pre><code class="language-python">def recentlyDepartedPeople()
+</code></pre>
+<p>Returns the people that have recently departed</p>
+<p><strong>Returns</strong></p>
+<p><code>list</code>: The people that have recently departed</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.occludedPeople"></a></p>
+<h4 id="occludedpeople">occludedPeople</h4>
+<pre><code class="language-python">def occludedPeople()
+</code></pre>
+<p>Returns the people that are occluded</p>
+<p><strong>Returns</strong></p>
+<p><code>list</code>: The people that are occluded</p>
+<p><a id="darcyai.perceptor.coral.people_perceptor_pom.PeoplePOM.serialize"></a></p>
+<h4 id="serialize">serialize</h4>
+<pre><code class="language-python">def serialize()
+</code></pre>
+<p>Returns the serialized data of the object</p>
+<p><strong>Returns</strong></p>
+<p><code>dict</code>: The serialized data</p>
               
             </div>
           </div><footer>
