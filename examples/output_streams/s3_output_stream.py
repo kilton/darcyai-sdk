@@ -1,9 +1,11 @@
+#Add the AWS SDK library for Python
 import boto3
 
+#Add the DarcyAI components that we need, particularly the OutputStream
 from darcyai.output.output_stream import OutputStream
 from darcyai.utils import validate_not_none, validate_type
 
-
+#Define our own OutputStream class
 class S3Stream(OutputStream):
     """
     A stream that writes data to a AWS S3 bucket.
@@ -14,8 +16,10 @@ class S3Stream(OutputStream):
                  aws_access_key_id:str,
                  aws_secret_access_key:str,
                  aws_region:str):
+        #Call init on the parent class
         super().__init__()
 
+        #Validate all input parameters
         validate_not_none(bucket, "bucket is required")
         validate_type(bucket, str, "bucket must be a string")
 
@@ -28,16 +32,18 @@ class S3Stream(OutputStream):
         validate_not_none(aws_region, "aws_region is required")
         validate_type(aws_region, str, "aws_region must be a string")
 
+        #Create an AWS session
         session = boto3.Session(
             aws_access_key_id=aws_access_key_id,
             aws_secret_access_key=aws_secret_access_key,
             region_name=aws_region,
         )
 
+        #Choose an S3 bucket as the AWS resource
         s3 = session.resource('s3')
         self.__bucket = s3.Bucket(bucket)
 
-
+    #Define the "write" method which outputs data on the stream
     def write(self, data:tuple) -> None:
         """
         Writes data to the stream.
@@ -52,14 +58,17 @@ class S3Stream(OutputStream):
         if data is None:
             return
 
+        #Validate the incoming data
         validate_type(data, tuple, "data must be a tuple")
         validate_type(data[0], str, "data[0] must be a string")
 
+        #Send up the data using the "put_object" method on the S3 bucket
         key = data[0]
         value = data[1]
         self.__bucket.put_object(Key=key, Body=value)
 
 
+    #Define the "close" method for the OutputStream object
     def close(self) -> None:
         """
         Closes the output stream.
