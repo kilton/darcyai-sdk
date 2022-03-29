@@ -1,12 +1,15 @@
+#Add libraries for audio input and math operations
 import audioop
 import math
 import numpy as np
 import pyaudio
 
+#Add Darcy AI libraries that we need, particularly InputStream and StreamData
 from darcyai.input.input_stream import InputStream
 from darcyai.stream_data import StreamData
 from darcyai.utils import timestamp, validate_type, validate_not_none, validate
 
+#Define our own Darcy AI InputStream class
 class AudioInputStream(InputStream):
     """
     AudioInputStream is an input stream that reads audio data from a microphone.
@@ -24,6 +27,7 @@ class AudioInputStream(InputStream):
                  format: str = pyaudio.paFloat32,
                  sample_len_sec: int = 5):
 
+        #Validate input parameters
         validate_not_none(chunk_size, "chunk_size must be provided")
         validate_type(chunk_size, int, "chunk_size must be an integer")
         validate(chunk_size > 0, "chunk_size must be greater than 0")
@@ -38,16 +42,19 @@ class AudioInputStream(InputStream):
         validate(sample_len_sec > 0, "sample_len_sec must be greater than 0")
         self.__sample_len_sec = sample_len_sec
         
+        #Set up class properties with default starting values 
         self.__audio_stream = None
         self.__stopped = True
         self.__threshold = 30000
 
+        #Set up audio library
         self.__pyaudio = pyaudio.PyAudio()
         self.__input_device_index = self.__pyaudio.get_default_input_device_info()["index"]
         self.__channels = self.__pyaudio.get_default_input_device_info()["maxInputChannels"]
         self.__rate = int(self.__pyaudio.get_device_info_by_index(self.__input_device_index)["defaultSampleRate"])
 
 
+    #Define the "stop" method by handling the audio stream library properly
     def stop(self):
         """
         Stops the audio stream.
@@ -58,6 +65,8 @@ class AudioInputStream(InputStream):
             self.__audio_stream.close()
 
 
+    #Define the "stream" method for our InputStream class.
+    #This is where the actual audio stream processing takes place
     def stream(self):
         """
         Starts the audio stream.
@@ -72,6 +81,10 @@ class AudioInputStream(InputStream):
                                      input_device_index=self.__input_device_index)
         self.__stopped = False
 
+        #Run a loop whenever our InputStream is not "stopped"
+        #Fetch the audio samples coming from the audio stream object
+        #Evaluate the audio signal and ignore it if the signal is below the threshold
+        #If it passes the threshold, send out the audio data so it will enter the Darcy AI pipeline
         while not self.__stopped:
             frames = []
             for i in range(0, int(self.__rate / self.__chunk_size * self.__sample_len_sec)):
@@ -85,6 +98,7 @@ class AudioInputStream(InputStream):
             else:
                 print("Silence detected")
 
+    #Define a method for getting the sample rate
     def get_sample_rate(self):
         """
         Returns the sample rate of the audio stream.
