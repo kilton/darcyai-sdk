@@ -33,7 +33,7 @@ class SamplePipeline():
         self.__pipeline.add_output_stream(
             "live_feed", self.__live_feed_callback, live_feed)
 
-        #Create an instance of the face detector Percpetor and add it to the pipeline
+        #Create an instance of the face detector Perceptor and add it to the pipeline
         face_detector = FaceDetector(threshold=0.9)
         self.__pipeline.add_perceptor(
             "face", face_detector, input_callback=self.__face_input_callback)
