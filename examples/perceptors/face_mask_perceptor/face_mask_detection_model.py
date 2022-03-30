@@ -1,3 +1,4 @@
+#Define a helper class for use in the Perception Object Model (POM) output
 class FaceMaskDetectionModel:
     def __init__(self, has_mask:bool):
         self.__has_mask = has_mask
