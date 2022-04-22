@@ -29,11 +29,11 @@ function Check-PythonVersion
 
     $matches = [Regex]::Matches($pythonVersion, "[\d\.]+")
 
-    $isGreaterThan = [version]::Parse($matches[0].Value) -ge [version]::Parse("3.7.0")
+    $isGreaterThan = [version]::Parse($matches[0].Value) -ge [version]::Parse("3.6.9")
 
     if (-not $isGreaterThan)
     {
-        Write-Host "ERROR: Darcy AI requires Python 3.7 or later"
+        Write-Host "ERROR: Darcy AI requires Python 3.6.9 or later"
         exit 1
     }
 }
@@ -68,12 +68,12 @@ function Check-OpenCVVersion
 
     try
     {
-        python -c 'import cv2; assert cv2.__version__ >= \"4.5\"' 2>&1
+        python -c 'import cv2; assert cv2.__version__ >= \"3.4.17.63\"' 2>&1
         return
     }
     catch
     {
-        Write-Host "ERROR: OpenCV 4.5 or later is required"
+        Write-Host "ERROR: OpenCV 3.4.17.63 or later is required"
         exit 1
     }
     finally

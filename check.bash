@@ -6,9 +6,12 @@
 # Check python version
 function check_python_version() {
 
-    if ! python3 -c 'import sys; assert sys.version_info >= (3,7)' > /dev/null; then
-        echo "ERROR: Darcy AI requires Python 3.7 or later"
-        exit 1
+    if ! python3 -c 'import sys; assert sys.version_info >= (3,6,9)' > /dev/null 2>&1; then
+        printf "\t\t\xE2\x9C\x98 Ensure Python is 3.6.9 or later\n"
+        return 1
+    else
+        printf "\t\t\xE2\x9C\x93 Ensure Python is 3.6.9 or later\n"
+        return 0
     fi
 
 }
@@ -16,9 +19,12 @@ function check_python_version() {
 # Check OpenCV version
 function check_opencv_version() {
 
-    if ! python3 -c 'import cv2; assert cv2.__version__ >= "4.5"' > /dev/null; then
-        echo "ERROR: OpenCV 4.5 or later is required"
-        exit 1
+    if ! python3 -c 'import cv2; assert cv2.__version__ >= "3.4.17.63"' > /dev/null 2>&1; then
+        printf "\t\t\xE2\x9C\x98 Ensure OpenCV is 3.4.17.63 or later\n"
+        return 1
+    else
+        printf "\t\t\xE2\x9C\x93 Ensure OpenCV is 3.4.17.63 or later\n"
+        return 0
     fi
 
 }
@@ -26,9 +32,12 @@ function check_opencv_version() {
 # Check python package installed
 function check_python_package() {
 
-    if ! python3 -c "import $1" > /dev/null; then
-        echo "ERROR: Python package '$1' is required"
-        exit 1
+    if ! python3 -c "import $1" > /dev/null 2>&1; then
+        printf "\t\xE2\x9C\x98 Checking Python package '$1'\n"
+        return 1
+    else
+        printf "\t\xE2\x9C\x93 Checking Python package '$1'\n"
+        return 0
     fi
 
 }
@@ -36,22 +45,27 @@ function check_python_package() {
 # Check command exists
 function check_command_exists() {
 
-    if ! command -v $1 > /dev/null; then
-        echo "ERROR: $1 is required"
-        exit 1
+    if ! command -v $1 > /dev/null 2>&1; then
+        printf "\t\xE2\x9C\x98 Checking $1\n"
+        return 1
+    else
+        printf "\t\xE2\x9C\x93 Checking $1\n"
+        return 0
     fi
 
 }
 
+printf "Checking tools\n"
+check_command_exists docker
+
 check_command_exists python3
 check_python_version
 
-check_command_exists docker
+printf "\nChecking Python packages\n"
 
-check_python_package cv2
-check_opencv_version
+if check_python_package cv2; then
+    check_opencv_version
+fi
 
 check_python_package pycoral
 check_python_package darcyai
-
-echo "Darcy AI development environment is ready"
