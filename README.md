@@ -57,6 +57,9 @@ You will need some hardware to run your Darcy AI application. Darcy can generall
 - Raspberry Pi with Coral USB
 	- Raspberry Pi 4 single board computer [https://www.raspberrypi.com/products/raspberry-pi-4-model-b/](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 	- Google Coral AI accelerator USB module [https://coral.ai/products/accelerator/](https://coral.ai/products/accelerator/)
+- Nvidia Jetson Nano with Coral USB
+	- Jetson Nano Developer Kit [https://developer.nvidia.com/embedded/jetson-nano-developer-kit](https://developer.nvidia.com/embedded/jetson-nano-developer-kit)
+	- Google Coral AI accelerator USB module [https://coral.ai/products/accelerator/](https://coral.ai/products/accelerator/)
 - Google Coral Dev Board [https://coral.ai/products/dev-board/](https://coral.ai/products/dev-board/)
 - Google Coral Dev Board Mini [https://coral.ai/products/dev-board-mini/](https://coral.ai/products/dev-board-mini/)
 - ASUS Tinker T [https://www.asus.com/us/Networking-IoT-Servers/AIoT-Industrial-Solutions/Tinker-Board-Series/Tinker-Edge-T/](https://www.asus.com/us/Networking-IoT-Servers/AIoT-Industrial-Solutions/Tinker-Board-Series/Tinker-Edge-T/)
@@ -74,6 +77,8 @@ When you are ready to create, you can launch your Darcy AI developer journey wit
 Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./BUILD.md).
 
 To prepare your Raspberry Pi board as a development environment for building Darcy AI applications, follow the [Raspberry Pi Environment Setup Guide](./SETUP_RPI.md).
+
+To prepare your Nvidia Jetson Nano board as a development environment for building Darcy AI applications, follow the [Jetson Nano Environment Setup Guide](./SETUP_JETSON.md).
 
 ## Deploying
 

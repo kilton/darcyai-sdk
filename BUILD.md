@@ -8,17 +8,21 @@ You’ll need to have a few things in place before you build. Here’s the list:
 - Visual Studio Code (VS Code) with Python extensions
 	- [https://code.visualstudio.com/](https://code.visualstudio.com/)
 	- [https://marketplace.visualstudio.com/items?itemName=ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- A Raspberry Pi with an attached video camera and Google Coral edge TPU
-- Set up your VS Code environment to develop on your Raspberry Pi remotely
+- An edge computing board (either of these two options will work very well)
+    - A Raspberry Pi with an attached video camera and Google Coral edge TPU
+    - An Nvidia Jetson Nano with an attached video camera and Google Coral edge TPU
+- Set up your VS Code environment to develop on your Raspberry Pi or Jetson Nano remotely
 	- [https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/](https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/)
 - Python 3.5+
-- Docker on your Raspberry Pi
+- Docker on your Raspberry Pi or Jetson Nano
 
 ## Environment setup
 
-To check if your Raspberry Pi meets all of the requirements for building and debugging Darcy AI applications, run the system check script [check.bash](./check.bash).
+To check if your Raspberry Pi or Jetson Nano meets all of the requirements for building and debugging Darcy AI applications, run the system check script [check.bash](./check.bash).
 
 If you need to setup your Raspberry Pi as a Darcy AI development environment, follow the [Raspberry Pi Environment Setup Guide](./SETUP_RPI.md).
+
+If you need to setup your Jetson Nano as a Darcy AI development environment, follow the [Jetson Nano Environment Setup Guide](./SETUP_JETSON.md).
 
 ## Create your application Python file and import libraries
 
