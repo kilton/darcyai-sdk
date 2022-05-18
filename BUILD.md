@@ -64,7 +64,7 @@ live_feed = LiveFeedStream(path="/", port=3456, host="0.0.0.0")
 
 ## Set up a [callback](./TERMINOLOGY.md#callback) and add the [Output Stream](./TERMINOLOGY.md#output-stream) to the [Pipeline](./TERMINOLOGY.md#pipeline)
 
-Before we add the LiveFeed [Output Stream](./TERMINOLOGY.md#output-stream) to the [Pipeline](./TERMINOLOGY.md#pipeline), we need to set up a [callback](./TERMINOLOGY.md#callback) function that we are going to use to process the data before displaying the video. Follow the comments to learn about the steps that are taken. This is the most complex portion of the whole application and it is where all of the business logic is taking place. After the [callback](./TERMINOLOGY.md#callback) function definition, there is a line for adding the LiveFeed [Output Stream](./TERMINOLOGY.md#output-stream) to the [Pipeline](./TERMINOLOGY.md#pipeline). That command needs to have the [callback](./TERMINOLOGY.md#callback) function already defined before it can execute successfully.
+Before we add the LiveFeed Output Stream to the Pipeline, we need to set up a callback function that we are going to use to process the data before displaying the video. Follow the comments to learn about the steps that are taken. This is the most complex portion of the whole application and it is where all of the business logic is taking place. After the callback function definition, there is a line for adding the LiveFeed Output Stream to the Pipeline. That command needs to have the callback function already defined before it can execute successfully.
 ```
 #Create a callback function for handling the Live Feed output stream data before it gets presented
 def live_feed_callback(pom, input_data):
@@ -94,9 +94,9 @@ def live_feed_callback(pom, input_data):
 pipeline.add_output_stream("output", live_feed_callback, live_feed)
 ```
 
-## Define an event [Output Stream](./TERMINOLOGY.md#output-stream) and an input [Output Stream](./TERMINOLOGY.md#output-stream) and instantiate the People [Pipeline](./TERMINOLOGY.md#pipeline)
+## Define an event Output Stream and an input Output Stream and instantiate the People Pipeline
 
-Just like the LiveFeed [Output Stream](./TERMINOLOGY.md#output-stream), the People [Perceptor](./TERMINOLOGY.md#perceptor) must have the [callback](./TERMINOLOGY.md#callback) already defined before it can work with those [callbacks](./TERMINOLOGY.md#callback). The input [callback](./TERMINOLOGY.md#callback) simply takes the [Input Stream](./TERMINOLOGY.md#input-stream) data and sends it onward to the People [Perceptor](./TERMINOLOGY.md#perceptor). The “New Person” event [callback](./TERMINOLOGY.md#callback) simply prints the unique person identifier string to the console output when a new person has been detected by Darcy.
+Just like the LiveFeed Output Stream, the People [Perceptor](./TERMINOLOGY.md#perceptor) must have the callback already defined before it can work with those callbacks. The input callback simply takes the [Input Stream](./TERMINOLOGY.md#input-stream) data and sends it onward to the People [Perceptor](./TERMINOLOGY.md#perceptor). The “New Person” event callback simply prints the unique person identifier string to the console output when a new person has been detected by Darcy.
 ```
 #Create a callback function for handling the input that is about to pass to the People Perceptor
 def people_input_callback(input_data, pom, config):
@@ -116,14 +116,14 @@ people_ai = PeoplePerceptor()
 people_ai.on("new_person_entered_scene", new_person_callback)
 ```
 
-## Add the People Perceptor to the [Pipeline](./TERMINOLOGY.md#pipeline)
+## Add the People Perceptor to the Pipeline
 
 ```
 #Add the People Perceptor instance to the Pipeline and use the input callback from above as the input preparation handler
 pipeline.add_perceptor("peeps", people_ai, input_callback=people_input_callback)
 ```
 
-## Change some configuration items in the People [Perceptor](./TERMINOLOGY.md#perceptor)
+## Change some configuration items in the People Perceptor
 
 ```
 #Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
@@ -132,7 +132,7 @@ pipeline.set_perceptor_config("peeps", "pose_landmark_dot_size", 2)
 pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", "0,255,0")
 ```
 
-## Start the [Pipeline](./TERMINOLOGY.md#pipeline)
+## Start the Pipeline
 
 ```
 #Start the Pipeline
