@@ -26,11 +26,11 @@ The [examples](./examples) folder contains a diverse set of sample applications 
 
 - Real-time Audio Analysis - Build and deploy this Darcy AI demo application to learn how to add audio capabilities to Darcy and listen for important sounds. [Audio Analysis](./examples/audio_analysis)
 
-- Basic Darcy AI [Pipeline](./TERMINOLOGY.md#pipeline) - Use this demo application to learn the basics of creating a Darcy AI [pipeline](./TERMINOLOGY.md#pipeline). [Basic Pipeline](./examples/basic_pipeline)
+- Basic Darcy AI [Pipeline](./TERMINOLOGY.md#pipeline) - Use this demo application to learn the basics of creating a Darcy AI Pipeline. [Basic Pipeline](./examples/basic_pipeline)
 
-- Sample [Output Stream](./TERMINOLOGY.md#output-stream) - Learn how to create a Darcy AI [output stream](./TERMINOLOGY.md#output-stream) by adding this example to your application. The example sends your Darcy AI output to an Amazon Web Services S3 bucket. [Output Stream](./examples/output_streams)
+- Sample [Output Stream](./TERMINOLOGY.md#output-stream) - Learn how to create a Darcy AI Output Stream by adding this example to your application. The example sends your Darcy AI output to an Amazon Web Services S3 bucket. [Output Stream](./examples/output_streams)
 
-- Sample [Perceptors](./TERMINOLOGY.md#perceptor) - Learn how to build your own Darcy AI [perceptors](./TERMINOLOGY.md#perceptor) with the examples in this directory. There is a basic mock perceptor that you can use as a template. There is a face detector perceptor that uses an [AI model](./TERMINOLOGY.md#ai-model) to find faces. There is also a face mask detector perceptor that checks a person's face for a mask. [Perceptors](./examples/perceptors)
+- Sample [Perceptors](./TERMINOLOGY.md#perceptor) - Learn how to build your own Darcy AI Perceptors with the examples in this directory. There is a basic mock perceptor that you can use as a template. There is a face detector perceptor that uses an [AI model](./TERMINOLOGY.md#ai-model) to find faces. There is also a face mask detector perceptor that checks a person's face for a mask. [Perceptors](./examples/perceptors)
 
 - Heart Rate Demo - this demo application is a good example of how to build an edge application that is made of multiple microservices that communicate with each other. [https://github.com/darcyai/heart-rate-demo](https://github.com/darcyai/heart-rate-demo)
 
