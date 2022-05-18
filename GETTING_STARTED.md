@@ -29,7 +29,7 @@ Every application has a main processing loop that defines the code structure. Ev
 
 ## Start with an Input Stream
 
-The first stage of every pipeline cycle (also called a [frame or pulse](./TERMINOLOGY.md#frame-cycle-or-pulse)) is the unprocessed data coming from the [Input Stream](./TERMINOLOGY.md#input-stream)that you have chosen for your application. Choose an Input Stream that provides the sensor data that you want Darcy to process. This may be audio, video, LiDAR, thermal video, or just about anything you can imagine.
+The first stage of every pipeline cycle (also called a [frame or pulse](./TERMINOLOGY.md#frame-cycle-or-pulse)) is the unprocessed data coming from the [Input Stream](./TERMINOLOGY.md#input-stream) that you have chosen for your application. Choose an Input Stream that provides the sensor data that you want Darcy to process. This may be audio, video, LiDAR, thermal video, or just about anything you can imagine.
 
 A good example of an Input Stream is the CameraStream class that comes built-in with the Darcy AI SDK. This Input Stream allows you to specify the device path for a video camera. It will read the video camera feed and bring it into Darcy at the frame rate and resolution you specify.
 
@@ -54,9 +54,9 @@ people_ai = PeoplePerceptor()
 pipeline.add_perceptor("mypeople", people_ai, input_callback=people_input_callback)
 ```
 
-## Every pipeline step stores data in the [Perception Object Model (POM)](./TERMINOLOGY.md#perception-object-model-pom)
+## Every pipeline step stores data in the Perception Object Model (POM)
 
-When a Perceptor has executed, its results are added to the Perception Object Model (POM) and the Pipeline continues to the next Perceptor or [Output Stream](./TERMINOLOGY.md#output-stream) if there are not further Perceptors in the Pipeline. The POM is like a shopping cart that gets loaded with data as it moves along. Everything is categorized in the POM so you can easily access the data associated with any Perceptor. The reference is the name you gave that Perceptor when adding it to the Pipeline.
+When a Perceptor has executed, its results are added to the [Perception Object Model (POM)](./TERMINOLOGY.md#perception-object-model-pom) and the Pipeline continues to the next Perceptor or [Output Stream](./TERMINOLOGY.md#output-stream) if there are not further Perceptors in the Pipeline. The POM is like a shopping cart that gets loaded with data as it moves along. Everything is categorized in the POM so you can easily access the data associated with any Perceptor. The reference is the name you gave that Perceptor when adding it to the Pipeline.
 
 Every Perceptor produces its own specific data structure and may also provide convenience functions for performing operations on the result data, such as retrieving a particular person from a set or grabbing the face image of a specific person. The data structure and set of convenience functions for each Perceptor can be found in the documentation for that Perceptor.
 
