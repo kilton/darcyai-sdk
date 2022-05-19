@@ -36,6 +36,7 @@ from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
 from darcyai.input.camera_stream import CameraStream
 from darcyai.output.live_feed_stream import LiveFeedStream
 from darcyai.pipeline import Pipeline
+from darcyai.config import RGB
 ```
 
 If you don’t have the `darcyai` library installed yet, you can install it with PIP package installer for Python using the following commands, which you should run both on your development workstation and on your Raspberry Pi where you will be running your application:
@@ -129,7 +130,7 @@ pipeline.add_perceptor("peeps", people_ai, input_callback=people_input_callback)
 #Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
 pipeline.set_perceptor_config("peeps", "show_pose_landmark_dots", True)
 pipeline.set_perceptor_config("peeps", "pose_landmark_dot_size", 2)
-pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", "0,255,0")
+pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", RGB(0, 255, 0))
 ```
 
 ## Start the Pipeline
@@ -211,7 +212,7 @@ pipeline.add_perceptor("peeps", people_ai, input_callback=people_input_callback)
 #Update the configuration of the People Perceptor to show the pose landmark dots on the annotated video frame
 pipeline.set_perceptor_config("peeps", "show_pose_landmark_dots", True)
 pipeline.set_perceptor_config("peeps", "pose_landmark_dot_size", 2)
-pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", "0,255,0")
+pipeline.set_perceptor_config("peeps", "pose_landmark_dot_color", RGB(0, 255, 0))
 
 #Start the Pipeline
 pipeline.run()
