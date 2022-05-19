@@ -85,6 +85,10 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../jetson-nano-setup/">Jetson Nano Setup</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../build/">Build</a>
                 </li>
               </ul>
@@ -185,7 +189,7 @@
 <p>The Darcy AI SDK offers a rich set of features that Darcy AI application developers can use to easily build complex AI processing chains. This makes developing rich real-time applications possible in a shorter timeframe and with a much more standardized approach.</p>
 <p>If you have not yet read the overview of Darcy AI terminology, it is recommended that you do that first. You can find it here <a href="../terminology/">Darcy AI Terminology Guide</a>.</p>
 <h2 id="thinking-in-terms-of-darcy-ai-pipelines">Thinking in terms of Darcy AI pipelines</h2>
-<p>The concept of an AI pipeline is similar to complex event processing (CEP) and data stream processing, but there are some unique aspects you will notice when building with the Darcy AI.</p>
+<p>The concept of an AI <a href="../terminology/#pipeline">Pipeline</a> is similar to complex event processing (CEP) and data stream processing, but there are some unique aspects you will notice when building with the Darcy AI.</p>
 <p>You are allowed only one Darcy AI pipeline in your application. There is a reason for this. A pipeline allows you to order the AI operations in a way that produces predictable trade-offs. One example is placing two different AI operations in parallel. On a hardware system that does not have enough AI accelerator hardware, Darcy will need to make a decision about how to run those operations. If you had more than one pipeline, Darcy would have conflicting intelligence about how to sequence the operations and you would be unable to predict which pipeline would be able to process.</p>
 <p>You should consider a pipeline to be the backbone of your application flow. You only want one backbone and it should include all of the AI processing that you need in order to make your application run smoothly.</p>
 <p>The way you structure the pipeline will have an effect on AI processing speed and timing reliability. For processes that must occur in a straight line, attach processing steps called Perceptors one after the other. For processes that can take place in any order and do not depend on one another, you can use parallel ordering.</p>
@@ -199,7 +203,7 @@
 <h2 id="full-trips-through-the-pipeline-are-your-application-main-loop">Full trips through the pipeline are your application "main loop"</h2>
 <p>Every application has a main processing loop that defines the code structure. Everything is built around that main loop and often gets triggered as part of the main loop’s operations. For your Darcy AI application, you should think of each full trip through the pipeline as one iteration of your main loop. This means you should include all of the AI processing steps that you want to happen every time in your pipeline. Processing steps that should only take place on certain conditions may be best implemented as immediate AI processing (see below) so Darcy does not use precious resources for processing that you don’t want.</p>
 <h2 id="start-with-an-input-stream">Start with an Input Stream</h2>
-<p>The first stage of every pipeline cycle (also called a frame or pulse) is the unprocessed data coming from the Input Stream that you have chosen for your application. Choose an Input Stream that provides the sensor data that you want Darcy to process. This may be audio, video, LiDAR, thermal video, or just about anything you can imagine.</p>
+<p>The first stage of every pipeline cycle (also called a <a href="../terminology/#frame-cycle-or-pulse">frame or pulse</a>) is the unprocessed data coming from the <a href="../terminology/#input-stream">Input Stream</a> that you have chosen for your application. Choose an Input Stream that provides the sensor data that you want Darcy to process. This may be audio, video, LiDAR, thermal video, or just about anything you can imagine.</p>
 <p>A good example of an Input Stream is the CameraStream class that comes built-in with the Darcy AI SDK. This Input Stream allows you to specify the device path for a video camera. It will read the video camera feed and bring it into Darcy at the frame rate and resolution you specify.</p>
 <p>Instantiate the CameraStream object and set some of its parameters like this:</p>
 <pre><code>from darcyai.input.camera_stream import CameraStream
@@ -207,7 +211,7 @@
 camera = CameraStream(video_device=&quot;/dev/video0&quot;, fps=20)
 </code></pre>
 <h2 id="attach-a-perceptor">Attach a Perceptor</h2>
-<p>The main processing of the Darcy AI Pipeline is found in the Percpetors. Adding a Perceptor is easy. You just instantiate the Perceptor class, perform any initial operations to set it up, and then add it to the Pipeline in whatever position you desire. Each Perceptor offers different configuration options and produces different results. Perceptors also offer events to which you can subscribe.</p>
+<p>The main processing of the Darcy AI Pipeline is found in the <a href="../terminology/#perceptor">Perceptors</a>. Adding a Perceptor is easy. You just instantiate the Perceptor class, perform any initial operations to set it up, and then add it to the Pipeline in whatever position you desire. Each Perceptor offers different configuration options and produces different results. Perceptors also offer events to which you can subscribe.</p>
 <p>A good example of a powerful Perceptor is the People Perceptor that is built-in with the Darcy AI SDK. This Perceptor is focused on detecting and processing people so you, as the developer, can simply work with semantic data results.</p>
 <p>Here is an example of creating a People Perceptor instance and adding it to the Pipeline:</p>
 <pre><code>from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
@@ -216,9 +220,9 @@ people_ai = PeoplePerceptor()
 pipeline.add_perceptor(&quot;mypeople&quot;, people_ai, input_callback=people_input_callback)
 </code></pre>
 <h2 id="every-pipeline-step-stores-data-in-the-perception-object-model-pom">Every pipeline step stores data in the Perception Object Model (POM)</h2>
-<p>When a Perceptor has executed, its results are added to the Perception Object Model (POM) and the Pipeline continues to the next Perceptor or Output Stream if there are not further Perceptors in the Pipeline. The POM is like a shopping cart that gets loaded with data as it moves along. Everything is categorized in the POM so you can easily access the data associated with any Perceptor. The reference is the name you gave that Perceptor when adding it to the Pipeline.</p>
+<p>When a Perceptor has executed, its results are added to the <a href="../terminology/#perception-object-model-pom">Perception Object Model (POM)</a> and the Pipeline continues to the next Perceptor or <a href="../terminology/#output-stream">Output Stream</a> if there are not further Perceptors in the Pipeline. The POM is like a shopping cart that gets loaded with data as it moves along. Everything is categorized in the POM so you can easily access the data associated with any Perceptor. The reference is the name you gave that Perceptor when adding it to the Pipeline.</p>
 <p>Every Perceptor produces its own specific data structure and may also provide convenience functions for performing operations on the result data, such as retrieving a particular person from a set or grabbing the face image of a specific person. The data structure and set of convenience functions for each Perceptor can be found in the documentation for that Perceptor.</p>
-<p>Here is an example of a callback that is taking advantage of several powerful convenience functions in the POM under the results of the People Perceptor named as “mypeople”:</p>
+<p>Here is an example of a <a href="../terminology/#callback">callback</a> that is taking advantage of several powerful convenience functions in the POM under the results of the People Perceptor named as “mypeople”:</p>
 <pre><code>def my_callback(pom, input_data):
   current_display_frame = pom.mypeople.annotatedFrame().copy()
   all_people = pom.mypeople.people()
