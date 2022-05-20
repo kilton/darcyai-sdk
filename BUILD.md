@@ -95,7 +95,7 @@ def live_feed_callback(pom, input_data):
 pipeline.add_output_stream("output", live_feed_callback, live_feed)
 ```
 
-## Define an event Output Stream and an input Output Stream and instantiate the People Pipeline
+## Define an event Output Stream and an input Output Stream and instantiate the People Perceptor
 
 Just like the LiveFeed Output Stream, the People [Perceptor](./TERMINOLOGY.md#perceptor) must have the callback already defined before it can work with those callbacks. The input callback simply takes the [Input Stream](./TERMINOLOGY.md#input-stream) data and sends it onward to the People [Perceptor](./TERMINOLOGY.md#perceptor). The “New Person” event callback simply prints the unique person identifier string to the console output when a new person has been detected by Darcy.
 ```
