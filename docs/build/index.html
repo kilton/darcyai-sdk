@@ -77,7 +77,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#set-up-a-callback-and-add-the-output-stream-to-the-pipeline">Set up a callback and add the Output Stream to the Pipeline</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#define-an-event-output-stream-and-an-input-output-stream-and-instantiate-the-people-pipeline">Define an event Output Stream and an input Output Stream and instantiate the People Pipeline</a>
+    <li class="toctree-l2"><a class="reference internal" href="#define-an-event-output-stream-and-an-input-output-stream-and-instantiate-the-people-perceptor">Define an event Output Stream and an input Output Stream and instantiate the People Perceptor</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#add-the-people-perceptor-to-the-pipeline">Add the People Perceptor to the Pipeline</a>
     </li>
@@ -109,15 +109,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../perceptor/">Perceptor</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../streamdata/">StreamData</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../perceptionobjectmodel/">PerceptionObjectModel</a>
                 </li>
               </ul>
               <ul>
@@ -157,17 +149,49 @@
                   <li class="toctree-l1"><a class="reference internal" href="../output-streams/jsonoutputstream/">JSONOutputStream</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Coral Perceptors</span></p>
+              <p class="caption"><span class="caption-text">Perceptors</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/perceptor/">Perceptor</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/perceptionobjectmodel/">PerceptionObjectModel</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/class/">Class</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/object/">Object</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/peoplepom/">PeoplePOM</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/peoplepom/">PeoplePOM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/peopleperceptor/">PeoplePerceptor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/perceptor-utils/">Perceptor Utils</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Coral Perceptors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">CPU Perceptors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/cpuperceptorbase/">CpuPerceptorBase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -235,7 +259,7 @@
 import os
 import pathlib
 
-from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
+from darcyai.perceptor.people_perceptor import PeoplePerceptor
 from darcyai.input.camera_stream import CameraStream
 from darcyai.output.live_feed_stream import LiveFeedStream
 from darcyai.pipeline import Pipeline
@@ -287,7 +311,7 @@ def live_feed_callback(pom, input_data):
 #Add the Live Feed output stream to the Pipeline and use the callback from above as the handler
 pipeline.add_output_stream(&quot;output&quot;, live_feed_callback, live_feed)
 </code></pre>
-<h2 id="define-an-event-output-stream-and-an-input-output-stream-and-instantiate-the-people-pipeline">Define an event Output Stream and an input Output Stream and instantiate the People Pipeline</h2>
+<h2 id="define-an-event-output-stream-and-an-input-output-stream-and-instantiate-the-people-perceptor">Define an event Output Stream and an input Output Stream and instantiate the People Perceptor</h2>
 <p>Just like the LiveFeed Output Stream, the People <a href="../terminology/#perceptor">Perceptor</a> must have the callback already defined before it can work with those callbacks. The input callback simply takes the <a href="../terminology/#input-stream">Input Stream</a> data and sends it onward to the People <a href="../terminology/#perceptor">Perceptor</a>. The “New Person” event callback simply prints the unique person identifier string to the console output when a new person has been detected by Darcy.</p>
 <pre><code>#Create a callback function for handling the input that is about to pass to the People Perceptor
 def people_input_callback(input_data, pom, config):
@@ -326,7 +350,7 @@ pipeline.run()
 import os
 import pathlib
 
-from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
+from darcyai.perceptor.people_perceptor import PeoplePerceptor
 from darcyai.input.camera_stream import CameraStream
 from darcyai.output.live_feed_stream import LiveFeedStream
 from darcyai.pipeline import Pipeline
