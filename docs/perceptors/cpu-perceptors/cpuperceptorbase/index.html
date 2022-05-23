@@ -212,13 +212,16 @@
 <p><a id="darcyai.perceptor.cpu.cpu_perceptor_base.CpuPerceptorBase.read_label_file"></a></p>
 <h4 id="read_label_file">read_label_file</h4>
 <pre><code class="language-python">@staticmethod
-def read_label_file(filename: str, has_ids: bool = True) -&gt; dict
+def read_label_file(filename: str,
+                    has_ids: bool = True,
+                    encoding: str = &quot;UTF-8&quot;) -&gt; dict
 </code></pre>
 <p>Reads the labels file.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>filename</strong> (<code>str</code>): The path to the labels file.</li>
 <li><strong>has_ids</strong> (<code>bool</code>): Whether the labels file contains IDs.</li>
+<li><strong>encoding</strong> (<code>str</code>): The encoding of the labels file.</li>
 </ul>
 <p><strong>Returns</strong></p>
 <p><code>dict</code>: A dictionary containing the labels.</p>
