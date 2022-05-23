@@ -101,15 +101,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../perceptor/">Perceptor</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../streamdata/">StreamData</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../perceptionobjectmodel/">PerceptionObjectModel</a>
                 </li>
               </ul>
               <ul>
@@ -149,17 +141,49 @@
                   <li class="toctree-l1"><a class="reference internal" href="../output-streams/jsonoutputstream/">JSONOutputStream</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Coral Perceptors</span></p>
+              <p class="caption"><span class="caption-text">Perceptors</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/perceptor/">Perceptor</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/perceptionobjectmodel/">PerceptionObjectModel</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/class/">Class</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/object/">Object</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../coral-perceptors/peoplepom/">PeoplePOM</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/peoplepom/">PeoplePOM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/peopleperceptor/">PeoplePerceptor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptors/perceptor-utils/">Perceptor Utils</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Coral Perceptors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">CPU Perceptors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/cpuperceptorbase/">CpuPerceptorBase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../perceptors/cpu-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -214,7 +238,7 @@ camera = CameraStream(video_device=&quot;/dev/video0&quot;, fps=20)
 <p>The main processing of the Darcy AI Pipeline is found in the <a href="../terminology/#perceptor">Perceptors</a>. Adding a Perceptor is easy. You just instantiate the Perceptor class, perform any initial operations to set it up, and then add it to the Pipeline in whatever position you desire. Each Perceptor offers different configuration options and produces different results. Perceptors also offer events to which you can subscribe.</p>
 <p>A good example of a powerful Perceptor is the People Perceptor that is built-in with the Darcy AI SDK. This Perceptor is focused on detecting and processing people so you, as the developer, can simply work with semantic data results.</p>
 <p>Here is an example of creating a People Perceptor instance and adding it to the Pipeline:</p>
-<pre><code>from darcyai.perceptor.coral.people_perceptor import PeoplePerceptor
+<pre><code>from darcyai.perceptor.people_perceptor import PeoplePerceptor
 
 people_ai = PeoplePerceptor()
 pipeline.add_perceptor(&quot;mypeople&quot;, people_ai, input_callback=people_input_callback)

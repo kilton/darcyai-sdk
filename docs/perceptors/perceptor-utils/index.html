@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>ImageClassificationPerceptor - Darcy AI</title>
+    <title>Perceptor Utils - Darcy AI</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "ImageClassificationPerceptor";
-        var mkdocs_page_input_path = "coral-perceptors/imageclassificationperceptor.md";
+        var mkdocs_page_name = "Perceptor Utils";
+        var mkdocs_page_input_path = "perceptors/perceptor-utils.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -77,15 +77,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../perceptor/">Perceptor</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../../streamdata/">StreamData</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../../perceptionobjectmodel/">PerceptionObjectModel</a>
                 </li>
               </ul>
               <ul>
@@ -125,27 +117,59 @@
                   <li class="toctree-l1"><a class="reference internal" href="../../output-streams/jsonoutputstream/">JSONOutputStream</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Coral Perceptors</span></p>
+              <p class="caption"><span class="caption-text">Perceptors</span></p>
               <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../coralperceptorbase/">CoralPerceptorBase</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptor/">Perceptor</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">ImageClassificationPerceptor</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#imageclassificationperceptor-objects">ImageClassificationPerceptor Objects</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#run">run</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#load">load</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptionobjectmodel/">PerceptionObjectModel</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../class/">Class</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../object/">Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../peoplepom/">PeoplePOM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../imageclassificationperceptor/">ImageClassificationPerceptor</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../objectdetectionperceptor/">ObjectDetectionPerceptor</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../peopleperceptor/">PeoplePerceptor</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../peoplepom/">PeoplePOM</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Perceptor Utils</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#get_supported_processors">get_supported_processors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get_perceptor_processor">get_perceptor_processor</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#validate_processor_preference">validate_processor_preference</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#validate_processor_list">validate_processor_list</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Coral Perceptors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">CPU Perceptors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/cpuperceptorbase/">CpuPerceptorBase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -162,7 +186,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Coral Perceptors &raquo;</li><li>ImageClassificationPerceptor</li>
+          <li>Perceptors &raquo;</li><li>Perceptor Utils</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -172,54 +196,90 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><a id="darcyai.perceptor.coral.image_classification_perceptor"></a></p>
-<h1 id="darcyaiperceptorcoralimage_classification_perceptor">darcyai.perceptor.coral.image_classification_perceptor</h1>
-<p><a id="darcyai.perceptor.coral.image_classification_perceptor.ImageClassificationPerceptor"></a></p>
-<h2 id="imageclassificationperceptor-objects">ImageClassificationPerceptor Objects</h2>
-<pre><code class="language-python">class ImageClassificationPerceptor(CoralPerceptorBase)
+                <p><a id="darcyai.perceptor.perceptor_utils"></a></p>
+<h1 id="darcyaiperceptorperceptor_utils">darcyai.perceptor.perceptor_utils</h1>
+<p><a id="darcyai.perceptor.perceptor_utils.get_supported_processors"></a></p>
+<h4 id="get_supported_processors">get_supported_processors</h4>
+<pre><code class="language-python">def get_supported_processors() -&gt; dict
 </code></pre>
-<p>ImageClassificationPerceptor is a class that implements the Perceptor interface for
-image classification.</p>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><code>threshold</code> <em>float</em> - The threshold for object detection.</li>
-<li><code>top_k</code> <em>int</em> - The number of top predictions to return.</li>
-<li><code>labels_file</code> <em>str</em> - The path to the labels file.</li>
-<li><code>labels</code> <em>dict</em> - A dictionary of labels.</li>
-<li><code>mean</code> <em>float</em> - The mean of the image.</li>
-<li><code>std</code> <em>float</em> - The standard deviation of the image.</li>
-<li><code>**kwargs</code> - Keyword arguments to pass to Perceptor.</li>
-</ul>
-<p><a id="darcyai.perceptor.coral.image_classification_perceptor.ImageClassificationPerceptor.run"></a></p>
-<h4 id="run">run</h4>
-<pre><code class="language-python">def run(input_data: Any,
-        config: ConfigRegistry = None) -&gt; (List[Any], List[str])
+<p>Gets the list of supported processors.</p>
+<p><strong>Returns</strong></p>
+<p><code>dict</code> - The list of supported processors.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; get_supported_processors()
+{&lt;Processor.CORAL_EDGE_TPU: 1&gt;: {'is_available': True, 'coral_tpus': [{'type': 'usb', 'path':\
+'/sys/bus/usb/devices/2-2'}]}, &lt;Processor.CPU: 2&gt;: {'is_available': True, 'cpu_count': 4}}
 </code></pre>
-<p>Runs the image classification model.</p>
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li><code>input_data</code> <em>Any</em> - The input data to run the model on.</li>
-<li><code>config</code> <em>ConfigRegistry</em> - The configuration for the perceptor.</li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<p>(list[Any], list(str)): A tuple containing the detected classes and the labels.</p>
-<p><a id="darcyai.perceptor.coral.image_classification_perceptor.ImageClassificationPerceptor.load"></a></p>
-<h4 id="load">load</h4>
-<pre><code class="language-python">def load(accelerator_idx: [int, None]) -&gt; None
+<p><a id="darcyai.perceptor.perceptor_utils.get_perceptor_processor"></a></p>
+<h4 id="get_perceptor_processor">get_perceptor_processor</h4>
+<pre><code class="language-python">def get_perceptor_processor(processor_preference: list) -&gt; Processor
 </code></pre>
-<p>Loads the image classification model.</p>
-<p><strong>Arguments</strong>:</p>
+<p>Gets the processor for the perceptor.</p>
+<p><strong>Arguments</strong></p>
 <ul>
-<li><code>accelerator_idx</code> <em>int</em> - The index of the Edge TPU to use.</li>
+<li><strong>processor_preference</strong> (<code>list</code>): The list of preferred processors.</li>
 </ul>
-<p><strong>Returns</strong>:</p>
-<p>None</p>
+<p><strong>Returns</strong></p>
+<p><code>Processor</code> - The processor for the perceptor.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; from darcyai.perceptor.processor import Processor
+&gt;&gt;&gt; processor_preference = [Processor.CORAL_EDGE_TPU, Processor.CPU]
+&gt;&gt;&gt; get_perceptor_processor(processor_preference)
+Processor.CORAL_EDGE_TPU
+</code></pre>
+<p><a id="darcyai.perceptor.perceptor_utils.validate_processor_preference"></a></p>
+<h4 id="validate_processor_preference">validate_processor_preference</h4>
+<pre><code class="language-python">def validate_processor_preference(processor_preference,
+                                  model_path_required=True)
+</code></pre>
+<p>Validate the processor preference.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>processor_preference</strong>: A dictionary of processor preference.
+    The key is the processor. Values are dictionaries of model paths and labels.</li>
+</ul>
+<p><strong>Raises</strong></p>
+<ul>
+<li><code>Exception</code>: If the processor preference is invalid.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; from darcyai.perceptor.processor import Processor
+&gt;&gt;&gt; processor_preference = {
+        Processor.CORAL_EDGE_TPU: {
+            &quot;model_path&quot;: &quot;/path/to/model.tflite&quot;,
+            &quot;labels_file&quot;: &quot;/path/to/labels.txt&quot;,
+        },
+        Processor.CPU: {
+            &quot;model_path&quot;: &quot;/path/to/model.tflite&quot;,
+            &quot;labels_file&quot;: &quot;/path/to/labels.txt&quot;,
+        },
+    }
+&gt;&gt;&gt; validate_processor_preference(processor_preference)
+</code></pre>
+<p><a id="darcyai.perceptor.perceptor_utils.validate_processor_list"></a></p>
+<h4 id="validate_processor_list">validate_processor_list</h4>
+<pre><code class="language-python">def validate_processor_list(processor_list)
+</code></pre>
+<p>Validate the processor list.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>processor_list</strong>: A list of processors.</li>
+</ul>
+<p><strong>Raises</strong></p>
+<ul>
+<li><code>Exception</code>: If the processor preference is invalid.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">&gt;&gt;&gt; from darcyai.perceptor.processor import Processor
+&gt;&gt;&gt; processor_list = [Processor.CORAL_EDGE_TPU, Processor.CPU]
+&gt;&gt;&gt; validate_processor_list(processor_list)
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../coralperceptorbase/" class="btn btn-neutral float-left" title="CoralPerceptorBase"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../objectdetectionperceptor/" class="btn btn-neutral float-right" title="ObjectDetectionPerceptor">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../peopleperceptor/" class="btn btn-neutral float-left" title="PeoplePerceptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../coral-perceptors/coralperceptorbase/" class="btn btn-neutral float-right" title="CoralPerceptorBase">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -242,10 +302,10 @@ image classification.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../coralperceptorbase/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../peopleperceptor/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../objectdetectionperceptor/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../coral-perceptors/coralperceptorbase/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

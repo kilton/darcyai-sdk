@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>VideoFileStream - Darcy AI</title>
+    <title>ObjectDetectionPerceptor - Darcy AI</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "VideoFileStream";
-        var mkdocs_page_input_path = "input-streams/videofilestream.md";
+        var mkdocs_page_name = "ObjectDetectionPerceptor";
+        var mkdocs_page_input_path = "perceptors/objectdetectionperceptor.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -92,26 +92,16 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Input Streams</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="../inputstream/">InputStream</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../input-streams/inputstream/">InputStream</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../inputmultistream/">InputMultiStream</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../input-streams/inputmultistream/">InputMultiStream</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../camerastream/">CameraStream</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../input-streams/camerastream/">CameraStream</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">VideoFileStream</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#videofilestream-objects">VideoFileStream Objects</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#stop">stop</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#stream">stream</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../input-streams/videofilestream/">VideoFileStream</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../videostreamdata/">VideoStreamData</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../input-streams/videostreamdata/">VideoStreamData</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Output Streams</span></p>
@@ -128,46 +118,54 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Perceptors</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/perceptor/">Perceptor</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptor/">Perceptor</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/perceptionobjectmodel/">PerceptionObjectModel</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptionobjectmodel/">PerceptionObjectModel</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/class/">Class</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../class/">Class</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/object/">Object</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../object/">Object</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/peoplepom/">PeoplePOM</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../peoplepom/">PeoplePOM</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../imageclassificationperceptor/">ImageClassificationPerceptor</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">ObjectDetectionPerceptor</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#objectdetectionperceptor-objects">ObjectDetectionPerceptor Objects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#__init__">__init__</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/peopleperceptor/">PeoplePerceptor</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../peopleperceptor/">PeoplePerceptor</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../perceptors/perceptor-utils/">Perceptor Utils</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../perceptor-utils/">Perceptor Utils</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">Coral Perceptors</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/coralperceptorbase/">CoralPerceptorBase</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                <li class="toctree-l2"><a class="reference internal" href="../coral-perceptors/peopleperceptor/">PeoplePerceptor</a>
                 </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="#">CPU Perceptors</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/cpu-perceptors/cpuperceptorbase/">CpuPerceptorBase</a>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/cpuperceptorbase/">CpuPerceptorBase</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/cpu-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/imageclassificationperceptor/">ImageClassificationPerceptor</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/cpu-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/objectdetectionperceptor/">ObjectDetectionPerceptor</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../perceptors/cpu-perceptors/peopleperceptor/">PeoplePerceptor</a>
+                <li class="toctree-l2"><a class="reference internal" href="../cpu-perceptors/peopleperceptor/">PeoplePerceptor</a>
                 </li>
     </ul>
                   </li>
@@ -186,7 +184,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Input Streams &raquo;</li><li>VideoFileStream</li>
+          <li>Perceptors &raquo;</li><li>ObjectDetectionPerceptor</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -196,58 +194,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><a id="darcyai.input.video_file_stream"></a></p>
-<h1 id="darcyaiinputvideo_file_stream">darcyai.input.video_file_stream</h1>
-<p><a id="darcyai.input.video_file_stream.VideoFileStream"></a></p>
-<h2 id="videofilestream-objects">VideoFileStream Objects</h2>
-<pre><code class="language-python">class VideoFileStream(InputStream)
+                <p><a id="darcyai.perceptor.object_detection_perceptor"></a></p>
+<h1 id="darcyaiperceptorobject_detection_perceptor">darcyai.perceptor.object_detection_perceptor</h1>
+<p><a id="darcyai.perceptor.object_detection_perceptor.ObjectDetectionPerceptor"></a></p>
+<h2 id="objectdetectionperceptor-objects">ObjectDetectionPerceptor Objects</h2>
+<pre><code class="language-python">class ObjectDetectionPerceptor(MultiPlatformPerceptorBase)
 </code></pre>
-<p>An input stream that reads frames from a video file.</p>
+<p>ObjectDetectionPerceptor is a class that implements the Perceptor interface for
+object detection.</p>
+<p><a id="darcyai.perceptor.object_detection_perceptor.ObjectDetectionPerceptor.__init__"></a></p>
+<h4 id="__init__">__init__</h4>
+<pre><code class="language-python">def __init__(processor_preference: dict,
+             threshold: float,
+             quantized: bool = True)
+</code></pre>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>file_name</strong> (<code>str</code>): The name of the video file to stream.</li>
-<li><strong>use_pi_camera</strong> (<code>bool</code>): Whether or not to use the Raspberry Pi camera.</li>
-<li><strong>loop</strong> (<code>bool</code>): Whether or not to loop the video. Defaults to <code>True</code>.</li>
-<li><strong>process_all_frames</strong> (<code>bool</code>): Whether or not to process all frames. Defaults to <code>True</code>.</li>
+<li><strong>processor_preference</strong>: A dictionary of processor preference.
+    The key is the processor. Values are dictionaries of model paths and labels.</li>
+<li><strong>threshold</strong> (<code>float</code>): The threshold for object detection.</li>
+<li><strong>quantized</strong> (<code>bool</code>): Whether the model is quantized (CPU).</li>
 </ul>
-<p><strong>Examples</strong></p>
-<pre><code class="language-python">&gt;&gt;&gt; from darcyai.input.video_file_stream import VideoFileStream
-&gt;&gt;&gt; video_file_stream = VideoFileStream(file_name=&quot;video.mp4&quot;,
-                                        loop=True,
-                                        process_all_frames=True)
-</code></pre>
-<p><a id="darcyai.input.video_file_stream.VideoFileStream.stop"></a></p>
-<h4 id="stop">stop</h4>
-<pre><code class="language-python">def stop() -&gt; None
-</code></pre>
-<p>Stops the video stream.</p>
-<p><strong>Examples</strong></p>
-<pre><code class="language-python">&gt;&gt;&gt; from darcyai.input.video_file_stream import VideoFileStream
-&gt;&gt;&gt; video_file_stream = VideoFileStream(file_name=&quot;video.mp4&quot;,
-                                        loop=True,
-                                        process_all_frames=True)
-&gt;&gt;&gt; video_file_stream.stop()
-</code></pre>
-<p><a id="darcyai.input.video_file_stream.VideoFileStream.stream"></a></p>
-<h4 id="stream">stream</h4>
-<pre><code class="language-python">def stream() -&gt; Iterable[VideoStreamData]
-</code></pre>
-<p>Streams the video frames.</p>
-<p><strong>Returns</strong></p>
-<p>An iterable of VideoStreamData objects.</p>
-<p><strong>Examples</strong></p>
-<pre><code class="language-python">&gt;&gt;&gt; from darcyai.input.video_file_stream import VideoFileStream
-&gt;&gt;&gt; video_file_stream = VideoFileStream(file_name=&quot;video.mp4&quot;,
-                                        loop=True,
-                                        process_all_frames=True)
-&gt;&gt;&gt; video_file_stream.stream()
+<p><strong>Example</strong></p>
+<pre><code class="language-python">from darcyai.perceptor.object_detection_perceptor import ObjectDetectionPerceptor
+from darcyai.perceptor.processor import Processor
+processor_preference = {
+                           Processor.CORAL_EDGE_TPU: {
+                               &quot;model_path&quot;: &quot;/path/to/model.tflite&quot;,
+                               &quot;labels_file&quot;: &quot;/path/to/labels.txt&quot;,
+                           },
+                           Processor.CPU: {
+                               &quot;model_path&quot;: &quot;/path/to/model.tflite&quot;,
+                               &quot;labels&quot;: {
+                                   &quot;label_1&quot;: &quot;label_1_name&quot;,
+                                   &quot;label_2&quot;: &quot;label_2_name&quot;,
+                               },
+                           },
+                       }
+object_detection_perceptor = ObjectDetectionPerceptor(
+    processor_preference=processor_preference,
+    threshold=0.5,
+    top_k=5)
 </code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../camerastream/" class="btn btn-neutral float-left" title="CameraStream"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../videostreamdata/" class="btn btn-neutral float-right" title="VideoStreamData">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../imageclassificationperceptor/" class="btn btn-neutral float-left" title="ImageClassificationPerceptor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../peopleperceptor/" class="btn btn-neutral float-right" title="PeoplePerceptor">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -270,10 +264,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../camerastream/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../imageclassificationperceptor/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../videostreamdata/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../peopleperceptor/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
