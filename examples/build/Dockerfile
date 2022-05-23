@@ -1,10 +1,7 @@
 FROM darcyai/darcy-ai-coral:dev
 
-COPY requirements.txt /src/
-WORKDIR /src
+RUN python3 -m pip install darcyai
 
-RUN python3 -m pip install -r requirements.txt --upgrade
+COPY .YOUR_PYTHON_FILE.py /src/
 
-COPY perceptors/face_detector/ /src/
-
-CMD python3 -u sample_pipeline.py
+CMD python3 -u /src/YOUR_PYTHON_FILE.py
