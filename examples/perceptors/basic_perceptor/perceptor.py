@@ -28,17 +28,17 @@ class BasicPerceptor(Perceptor):
         super().__init__(model_path="")
 
         #Set up configuration items for this Perceptor
-        self.config_schema = [
+        self.set_config_schema([
             Config("int_config", "int", 666, "Integer Config"),
             Config("float_config", "float", 6.66, "Float Config"),
             Config("str_config", "str", "Something", "String Config"),
             Config("bool_config", "bool", True, "Boolean Config"),
-        ]
+        ])
 
         #Set up the list of named events that this Perceptor emits
-        self.event_names = [
+        self.set_event_names([
             "event_1",
-        ]
+        ])
 
         #Set up some internal properties
         #If the sleep parameter is passed, use it

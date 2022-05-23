@@ -10,7 +10,7 @@ from darcyai.output.live_feed_stream import LiveFeedStream
 from darcyai.pipeline import Pipeline
 
 #Add our custom face detector Perceptor class
-from face_detector import FaceDetector
+from coral_face_detector import CoralFaceDetector
 
 #Define a class to hold our demo application
 class SamplePipeline():
@@ -34,7 +34,7 @@ class SamplePipeline():
             "live_feed", self.__live_feed_callback, live_feed)
 
         #Create an instance of the face detector Perceptor and add it to the pipeline
-        face_detector = FaceDetector(threshold=0.9)
+        face_detector = CoralFaceDetector(threshold=0.9)
         self.__pipeline.add_perceptor(
             "face", face_detector, input_callback=self.__face_input_callback)
 
@@ -52,8 +52,7 @@ class SamplePipeline():
         frame = input_data.data.copy()
 
         for face in pom.face:
-            xmin, ymin, xmax, ymax = face.bbox
-            cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
+            cv2.rectangle(frame, (face.xmin, face.ymin), (face.xmax, face.ymax), (0, 255, 0), 2)
 
         return frame
 

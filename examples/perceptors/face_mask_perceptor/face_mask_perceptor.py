@@ -4,7 +4,8 @@ import pathlib
 from typing import Any
 
 #Add Darcy AI libraries we need, particularly the ImageClassificationPerceptor base class and the Config and ConfigRegistry classes
-from darcyai.perceptor.coral.image_classification_perceptor import ImageClassificationPerceptor
+from darcyai.perceptor.image_classification_perceptor import ImageClassificationPerceptor
+from darcyai.perceptor.processor import Processor
 from darcyai.config import Config
 from darcyai.config_registry import ConfigRegistry
 from darcyai.utils import validate_not_none, validate_type, validate
@@ -24,7 +25,8 @@ class FaceMaskPerceptor(ImageClassificationPerceptor):
     def __init__(self, threshold:float=0.95):
         #Get the directory of the code file and find the AI model file
         script_dir = pathlib.Path(__file__).parent.absolute()
-        model_file = os.path.join(script_dir, "face_mask_detection.tflite")
+        coral_model_file = os.path.join(script_dir, "face_mask_detection_coral.tflite")
+        cpu_model_file = os.path.join(script_dir, "face_mask_detection_cpu.tflite")
 
         #Set up our own text labels for AI output so we don't need a labels.txt file
         labels = {
@@ -38,16 +40,24 @@ class FaceMaskPerceptor(ImageClassificationPerceptor):
         validate(0 <= threshold <= 1, "threshold must be a number between 0 and 1")
 
         #Call "init" on the parent class and pass our AI model information
-        super().__init__(model_path=model_file,
+        super().__init__(processor_preference={
+                             Processor.CORAL_EDGE_TPU: {
+                                 "model_path": coral_model_file,
+                                 "labels": labels,
+                             },
+                             Processor.CPU: {
+                                 "model_path": cpu_model_file,
+                                 "labels": labels,
+                             },
+                         },
                          threshold=0,
-                         top_k=2,
-                         labels=labels)
+                         top_k=2)
 
         #Add a configuration item to the list, in this case a threshold setting that is a floating point value
         #This will show up in the configuration REST API
-        self.config_schema = [
+        self.set_config_schema([
             Config("threshold", "float", threshold, "Threshold"),
-        ]
+        ])
 
 
     #Define our "run" method
@@ -66,11 +76,15 @@ class FaceMaskPerceptor(ImageClassificationPerceptor):
         perception_result = super().run(input_data=input_data, config=config)
 
         #Check the output to see if the mask detection crosses the configured threshold
-        if len(perception_result[1]) == 0:
-            has_mask = False
-        else:
-            idx = perception_result[1].index("Mask")
-            has_mask = perception_result[0][idx][1] >= self.get_config_value("threshold")
+        has_mask = False
+        if len(perception_result) > 0:
+            try:
+                idx = [i for i, x in enumerate(perception_result) if x.name == 'Mask']
+                if len(idx) > 0:
+                    threshold = self.get_config_value("threshold") / 100
+                    has_mask = bool(perception_result[idx[0]].confidence >= threshold)
+            except:
+                has_mask = False
 
         #Wrap the result in the POM-compatible class and send it out
         return FaceMaskDetectionModel(has_mask)
