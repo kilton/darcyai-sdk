@@ -152,6 +152,7 @@ from darcyai.perceptor.people_perceptor import PeoplePerceptor
 from darcyai.input.camera_stream import CameraStream
 from darcyai.output.live_feed_stream import LiveFeedStream
 from darcyai.pipeline import Pipeline
+from darcyai.config import RGB
 
 #Instantiate an Camera Stream input stream object
 camera = CameraStream(video_device="/dev/video0", fps=20)
