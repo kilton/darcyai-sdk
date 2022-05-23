@@ -29,10 +29,10 @@ class BasicPerceptor(Perceptor):
 
         #Set up configuration items for this Perceptor
         self.set_config_schema([
-            Config("int_config", "int", 666, "Integer Config"),
-            Config("float_config", "float", 6.66, "Float Config"),
-            Config("str_config", "str", "Something", "String Config"),
-            Config("bool_config", "bool", True, "Boolean Config"),
+            Config("int_config", "Integer Config", "int", 666, "Integer Config"),
+            Config("float_config", "Float Config", "float", 6.66, "Float Config"),
+            Config("str_config", "String Config", "str", "Something", "String Config"),
+            Config("bool_config", "Boolean Config", "bool", True, "Boolean Config"),
         ])
 
         #Set up the list of named events that this Perceptor emits

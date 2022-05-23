@@ -56,7 +56,7 @@ class FaceMaskPerceptor(ImageClassificationPerceptor):
         #Add a configuration item to the list, in this case a threshold setting that is a floating point value
         #This will show up in the configuration REST API
         self.set_config_schema([
-            Config("threshold", "float", threshold, "Threshold"),
+            Config("threshold", "Threshold", "float", threshold, "Threshold"),
         ])
 
 
