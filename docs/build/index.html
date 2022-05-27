@@ -64,6 +64,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../jetson-nano-setup/">Jetson Nano Setup</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../macos-setup/">macOS Setup</a>
+                </li>
+              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Build</a>
     <ul class="current">
@@ -274,7 +278,7 @@ from darcyai.config import RGB
 <h2 id="add-the-pipeline-input-stream-and-output-stream-objects">Add the <a href="../terminology/">Pipeline, Input Stream, and Output Stream objects</a></h2>
 <p>This part is quite easy. Just follow the comments to learn more about these 3 important lines of code.</p>
 <pre><code>#Instantiate an Camera Stream input stream object
-camera = CameraStream(video_device=&quot;/dev/video0&quot;, fps=20)
+camera = CameraStream(video_device=0, fps=20)
 
 #Instantiate the Pipeline object and pass it the Camera Stream object as its input stream source
 pipeline = Pipeline(input_stream=camera)
@@ -447,7 +451,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;cd /src/ &amp;&amp; pyt
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../jetson-nano-setup/" class="btn btn-neutral float-left" title="Jetson Nano Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../macos-setup/" class="btn btn-neutral float-left" title="macOS Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../deploy/" class="btn btn-neutral float-right" title="Deploy">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -471,7 +475,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;cd /src/ &amp;&amp; pyt
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../jetson-nano-setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../macos-setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../deploy/" style="color: #fcfcfc">Next &raquo;</a></span>
