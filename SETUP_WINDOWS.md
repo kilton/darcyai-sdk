@@ -19,23 +19,23 @@ If you have both Python 2.x versions and Python 3.x versions on your Windows mac
 
 ## Install OpenCV
 
-Install the OpenCV package for Python with the command `pip install opencv-python`
+Install the OpenCV package for Python with the command `py -m pip install opencv-python`
 
 ## Install the Pillow library
 
-Install the Pillow package for Python with the command `pip install Pillow`.
+Install the Pillow package for Python with the command `py -m pip install Pillow`.
 
 ### Install the Numpy library
 
-Install the numpy package for Python with the command `pip install numpy`.
+Install the numpy package for Python with the command `py -m pip install numpy`.
 
 ### Install the Imutils library
 
-Install the imutils package for Python with the command `pip install imutils`.
+Install the imutils package for Python with the command `py -m pip install imutils`.
 
 ## Install the DarcyAI library
 
-Install the Darcy AI library for Python with the command `pip install darcyai`.
+Install the Darcy AI library for Python with the command `py -m pip install darcyai`.
 
 ## Install Docker for Windows
 
@@ -45,7 +45,7 @@ After you have installed Docker, you can use `docker` commands on the command li
 
 ## Install TensorFlow
 
-Install TensorFlow for Python with the command `pip install tensorflow`
+Install TensorFlow for Python with the command `py -m pip install tensorflow`
 
 ## Start building your AI applications with Darcy
 
