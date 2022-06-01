@@ -63,6 +63,8 @@ When you are ready to create, you can launch your Darcy AI developer journey wit
 
 To prepare your Mac OS computer as a development environment for building Darcy AI applications, follow the [Mac OS X Environment Setup Guide](./SETUP_MACOS.md).
 
+To prepare your Windows computer as a development environment for building Darcy AI applications, follow the [Windows Environment Setup Guide](./SETUP_WINDOWS.md).
+
 Learn how to build and run a Darcy AI application using your favorite IDE with the [Build Guide](./BUILD.md).
 
 ## Packaging
