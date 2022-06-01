@@ -11,7 +11,7 @@ Follow the next step recommended at the bottom of this guide to learn how to pac
 ## Requirements
 
 You’ll need to have a few things in place before you build. Here’s the list:
-- A laptop or desktop computer running Mac OS X
+- A laptop or desktop computer running Mac OS X or Windows
 - A webcam or USB camera (the built-in webcam on your computer should work nicely)
 - Python version 3.6.9 or greater
 - An integrated development environment (IDE) for writing and debugging your code
@@ -27,6 +27,8 @@ When you are ready to package and deploy your Darcy AI application, try any of t
 ## Environment setup
 
 If you are using a MacOS laptop or desktop, follow the [Mac OS X Environment Setup Guide](./SETUP_MACOS.md).
+
+If you are using a Windows laptop or desktop, follow the [Windows Environment Setup Guide](./SETUP_WINDOWS.md).
 
 You can also use an edge compute board as your development environment. Choose from the following options to set up your edge board instead of your laptop or desktop computer. You do not need to follow these environment setup steps for a Raspberry Pi or Jetson Nano board if you are just using those boards to run your packaged Darcy AI applications.
 
