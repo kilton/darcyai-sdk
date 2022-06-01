@@ -1,18 +1,14 @@
 # Darcy AI Application Deployment Guide
 
-Once you have built a Darcy AI application, you can deploy it to as many devices as you want. Use this guide to get devices set up on the [Darcy Cloud](https://cloud.darcy.ai) and create your own deployment YAML files and deploy your applications.
+Once you have built and packaged a Darcy AI application, you can deploy it to as many devices as you want. Use this guide to get devices set up on the [Darcy Cloud](https://cloud.darcy.ai) and create your own deployment YAML files and deploy your applications.
 
 ## Make sure your Darcy AI application container is available
 
-If you followed the instructions in the [Build Guide](./BUILD.md) you probably created an application container called `darcydev/my-people-ai-app:1.0.0`. All Docker container identifiers are made of three parts. The first part, which is `darcydev` in this case, is the organization name. You must be a member of an organization in order to upload container images to that organization in [Docker Hub](https://hub.docker.com).
+You should have completed the steps in the [Packaging Guide](./PACKAGE.md) by now. If have not, follow that guide now to package your Darcy AI application.
 
-If you don't already have an account, create one now at [https://hub.docker.com](https://hub.docker.com). You will be given an organization which is your username.
+In the packaging process you specified a full application container identifier for your Darcy AI application. This identifier consists of an organization name followed by a `/` and then a container name followed by a `:` and then a tag. As an example, the identifier `darcyai/darcy-ai-explorer:1.0.0` represents an application called `darcy-ai-explorer` with a tag `1.0.0` that is hosted under the Docker Hub organization `darcyai`.
 
-If you used `darcydev` as your organization then you won't be able to upload your container image to Docker Hub. You can run your build command again but use a different container identifier and the build will be very quick. Docker will just make a copy of the container image with the new identifier.
-
-The second part of the identifier is the container name. It comes after the `/` and it can be whatever you want. You can think of this as something like a file name. The third pard is the tag. It comes after the `:` and it can also be whatever you want. A standard practice is to use the tag to identify different versions of the same application container.
-
-Once you have a new identifier for your Darcy AI application container and you have built the container image, you can add it to Docker Hub using the command `docker push YOUR_ORGANIZATION/YOUR_APP:tag.goes.here` where you have replaced the placeholders with the appropriate information, of course. You will use this identifier in your application deployment YAML file below.
+You will use your container identifier in your application deployment YAML file below. Make sure your container images were successfully pushed to Docker Hub at the conclusion of your packaging process.
 
 ## About the Darcy Cloud
 
@@ -70,3 +66,17 @@ In the pop-up window, choose the "upload your app" option and you will see a dra
 <img src="./examples/screenshots/darcy-cloud-custom-app-deployment.png" />
 
 The Darcy Cloud will tell you if you have any issues with your YAML file or your app deployment. It will also tell you if your Darcy AI application was deployed successfully. You can then check the status of your application using the Darcy Cloud.
+
+## Use your Darcy AI application
+
+When your Darcy AI application has successfully been deployed to your devices, you will see the status `running` in your Darcy Cloud UI. At this time, your Darcy AI application is fully running on those devices. If your application has a live video feed, such as the demo application you built in the [Build Guide](./BUILD.md) at port 3456 then you should be able to view the live feed using the IP address of the device followed by `:3456`. Replace the IP address in the example below with your device's IP address to view the live feed.
+
+```
+http://192.168.1.20:3456
+```
+
+You have accomplished a great amount at this point. Congratulations! You have developed a Darcy AI application and tested it with your IDE and local development environment. You have packaged your application for a variety of target devices. And you have made a deployment YAML file and used the Darcy Cloud to deploy and manage your Darcy AI appliation. Wow!
+
+## Next steps
+
+Now that you have all of these foundation Darcy AI developer skills, you are ready to build full solutions. Use the [Technical Documentation](https://darcyai.github.io/darcyai-sdk/) to learn more about what Darcy AI can do and take your skills to the next level.

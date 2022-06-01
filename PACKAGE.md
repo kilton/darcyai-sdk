@@ -62,7 +62,11 @@ docker buildx use YOURNAME
 
 ## Build your Docker container
 
-Now that you have a working BuildX builder namespace and a Dockerfile in your current working directory where your Python file is located, you can do the actual build. Use the following command to perform the build. You will need to replace `organization` with your actual Docker Hub organization name. Also replace `application-name` with the name you want to use for this container. The part after the `:` is the tag. You can put anything you want here. It is a common practice to put a version number, such as `1.0.0` in the example below.
+Now that you have a working BuildX builder namespace and a Dockerfile in your current working directory where your Python file is located, you can do the actual build.
+
+NOTE: If you don't already have an account, create one now at [https://hub.docker.com](https://hub.docker.com). You will be given an organization which is your username.
+
+Use the following command to perform the build. You will need to replace `organization` with your actual Docker Hub organization name. Also replace `application-name` with the name you want to use for this container. The part after the `:` is the tag. You can put anything you want here. It is a common practice to put a version number, such as `1.0.0` in the example below.
 
 ```
 docker buildx build -t organization/application-name:1.0.0 --platform linux/amd64,linux/arm64,linux/arm/v7 --push .
