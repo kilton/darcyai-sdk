@@ -18,31 +18,19 @@ Use this document and the other markdown files in this directory to learn about 
 
 To browse this document and all of the other documentation on a local web server, run the [docs.sh](./docs.sh) script and then visit [http://localhost:8000](http://localhost:8000).
 
-## Examples
-
-The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. Here are some short descriptions to help you understand what examples are available. Some example applications are stored in their own code repositories to make learning and building easier.
-
-- Darcy AI Explorer - this demo application is a rich showcase of what the Darcy AI system can do. Use the source code as a model for building a full-featured production application. [https://github.com/darcyai/darcyai-explorer](https://github.com/darcyai/darcyai-explorer)
-
-- Real-time Audio Analysis - Build and deploy this Darcy AI demo application to learn how to add audio capabilities to Darcy and listen for important sounds. [Audio Analysis](./examples/audio_analysis)
-
-- Basic Darcy AI [Pipeline](./TERMINOLOGY.md#pipeline) - Use this demo application to learn the basics of creating a Darcy AI Pipeline. [Basic Pipeline](./examples/basic_pipeline)
-
-- Sample [Output Stream](./TERMINOLOGY.md#output-stream) - Learn how to create a Darcy AI Output Stream by adding this example to your application. The example sends your Darcy AI output to an Amazon Web Services S3 bucket. [Output Stream](./examples/output_streams)
-
-- Sample [Perceptors](./TERMINOLOGY.md#perceptor) - Learn how to build your own Darcy AI Perceptors with the examples in this directory. There is a basic mock perceptor that you can use as a template. There is a face detector perceptor that uses an [AI model](./TERMINOLOGY.md#ai-model) to find faces. There is also a face mask detector perceptor that checks a person's face for a mask. [Perceptors](./examples/perceptors)
-
-- Heart Rate Demo - this demo application is a good example of how to build an edge application that is made of multiple microservices that communicate with each other. [https://github.com/darcyai/heart-rate-demo](https://github.com/darcyai/heart-rate-demo)
-
-- Sample Build Files - Get a sample Dockerfile in this folder so you don't have to create one from scratch. [Build Files](./examples/build)
-
-- Sample Deployment Files - Get a sample application YAML file in this folder so you can just replace the default values and deploy your edge AI application easily. [Deployment Files](./examples/deploy)
-
 ## What you need
 
-You will need some hardware to run your Darcy AI application. Darcy can generally run on any device or computer with a Google Coral AI accelerator. Darcy AI applications are packaged into Docker containers, so the operating system can be Linux, Mac OS X, or Windows provided that the Docker container runtime is installed.
+To develop and package Darcy AI applications, you only need a Mac, Windows, or Linux computer. To run Darcy AI applications on devices, you just need one or more devices that meet the minimum requirements below.
 
-### System requirements
+### System requirements for developer environments
+
+- Any modern CPU (both x86 and ARM processors will work)
+- 4GB of RAM
+- Camera (the integrated webcam on most laptops will work)
+- 5GB of available disk space for Docker, Python, required libraries, and your application containers
+- Optional: Google Coral AI accelerator for testing accelerated processing
+
+### System requirements for running deployed Darcy AI applications
 
 - ARM or x86 CPU (two or more cores recommended)
 - Google Coral AI accelerator (more than one Coral increases performance for many applications)
@@ -50,9 +38,8 @@ You will need some hardware to run your Darcy AI application. Darcy can generall
 - Camera (required for using Darcy with live video)
 - Internet connectivity (wired Ethernet or WiFi)
 - 200MB available disk space (1GB or more recommended and your application size will vary)
-- Docker container runtime
 
-### Darcy ready developer kits and edge boards
+### Darcy AI ready edge boards
 
 - Raspberry Pi with Coral USB
 	- Raspberry Pi 4 single board computer [https://www.raspberrypi.com/products/raspberry-pi-4-model-b/](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
@@ -74,11 +61,13 @@ When you are ready to create, you can launch your Darcy AI developer journey wit
 
 ## Building
 
-Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run with the [Build Guide](./BUILD.md).
+To prepare your Mac OS computer as a development environment for building Darcy AI applications, follow the [Mac OS X Environment Setup Guide](./SETUP_MACOS.md).
 
-To prepare your Raspberry Pi board as a development environment for building Darcy AI applications, follow the [Raspberry Pi Environment Setup Guide](./SETUP_RPI.md).
+Learn how to build and run a Darcy AI application using your favorite IDE with the [Build Guide](./BUILD.md).
 
-To prepare your Nvidia Jetson Nano board as a development environment for building Darcy AI applications, follow the [Jetson Nano Environment Setup Guide](./SETUP_JETSON.md).
+## Packaging
+
+Learn how to package your Darcy AI application into a container that includes all of the dependencies needed to run on many different devices with the [Packaging Guide](./PACKAGE.md).
 
 ## Deploying
 
@@ -91,6 +80,26 @@ Open the Darcy AI technical documentation to search and browse the API with code
 If you prefer to access the latest Darcy AI developer documentation with an internet connection, use [Hosted Darcy AI Documentation](https://darcyai.github.io/darcyai-sdk/).
 
 ## Resources
+
+### Examples
+
+The [examples](./examples) folder contains a diverse set of sample applications that you can use as a reference or as a start of your own Darcy AI application. The code is commented to help you understand what to do and when to do it. Here are some short descriptions to help you understand what examples are available. Some example applications are stored in their own code repositories to make learning and building easier.
+
+- Darcy AI Explorer - this demo application is a rich showcase of what the Darcy AI system can do. Use the source code as a model for building a full-featured production application. [https://github.com/darcyai/darcyai-explorer](https://github.com/darcyai/darcyai-explorer)
+
+- Real-time Audio Analysis - Build and deploy this Darcy AI demo application to learn how to add audio capabilities to Darcy and listen for important sounds. [Audio Analysis](./examples/audio_analysis)
+
+- Basic Darcy AI [Pipeline](./TERMINOLOGY.md#pipeline) - Use this demo application to learn the basics of creating a Darcy AI Pipeline. [Basic Pipeline](./examples/basic_pipeline)
+
+- Sample [Output Stream](./TERMINOLOGY.md#output-stream) - Learn how to create a Darcy AI Output Stream by adding this example to your application. The example sends your Darcy AI output to an Amazon Web Services S3 bucket. [Output Stream](./examples/output_streams)
+
+- Sample [Perceptors](./TERMINOLOGY.md#perceptor) - Learn how to build your own Darcy AI Perceptors with the examples in this directory. There is a basic mock perceptor that you can use as a template. There is a face detector perceptor that uses an [AI model](./TERMINOLOGY.md#ai-model) to find faces. There is also a face mask detector perceptor that checks a person's face for a mask. [Perceptors](./examples/perceptors)
+
+- Heart Rate Demo - this demo application is a good example of how to build an edge application that is made of multiple microservices that communicate with each other. [https://github.com/darcyai/heart-rate-demo](https://github.com/darcyai/heart-rate-demo)
+
+- Sample Build Files - Get a sample Dockerfile in this folder so you don't have to create one from scratch. [Build Files](./examples/build)
+
+- Sample Deployment Files - Get a sample application YAML file in this folder so you can just replace the default values and deploy your edge AI application easily. [Deployment Files](./examples/deploy)
 
 ### Getting help
 
