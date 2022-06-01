@@ -48,6 +48,8 @@ The `docker buildx` command line tool that was installed with your Docker Deskto
 
 The first step is to create a named builder that BuildX can use. You can do that with the following command. Replace YOURNAME with the name you would like to use.
 
+NOTE: If your installation of Docker Desktop requires you to use `sudo` when using `docker` commands, simply add the `sudo` to the beginning of everything shown in this guide.
+
 ```
 docker buildx create --name YOURNAME
 ```
