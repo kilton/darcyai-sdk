@@ -210,7 +210,8 @@ object detection.</p>
 <h4 id="__init__">__init__</h4>
 <pre><code class="language-python">def __init__(processor_preference: dict,
              threshold: float,
-             quantized: bool = True)
+             quantized: bool = True,
+             num_cpu_threads: int = 1)
 </code></pre>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -218,6 +219,8 @@ object detection.</p>
     The key is the processor. Values are dictionaries of model paths and labels.</li>
 <li><strong>threshold</strong> (<code>float</code>): The threshold for object detection.</li>
 <li><strong>quantized</strong> (<code>bool</code>): Whether the model is quantized (CPU).</li>
+<li><strong>num_cpu_threads</strong> (<code>int</code>): The number of threads to use for inference (CPU).
+    Defaults to 1.</li>
 </ul>
 <p><strong>Example</strong></p>
 <pre><code class="language-python">from darcyai.perceptor.object_detection_perceptor import ObjectDetectionPerceptor

@@ -213,7 +213,8 @@ image classification.</p>
              top_k: int = None,
              mean: float = 128.0,
              std: float = 128.0,
-             quantized: bool = True)
+             quantized: bool = True,
+             num_cpu_threads: int = 1)
 </code></pre>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -224,6 +225,8 @@ image classification.</p>
 <li><strong>mean</strong> (<code>float</code>): The mean of the image (Coral Edge TPU).</li>
 <li><strong>std</strong> (<code>float</code>): The standard deviation of the image (Coral Edge TPU).</li>
 <li><strong>quantized</strong> (<code>bool</code>): Whether the model is quantized (CPU).</li>
+<li><strong>num_cpu_threads</strong> (<code>int</code>): The number of threads to use for inference (CPU).
+    Defaults to 1.</li>
 </ul>
 <p><strong>Example</strong></p>
 <pre><code class="language-python">from darcyai.perceptor.image_classification_perceptor import ImageClassificationPerceptor
