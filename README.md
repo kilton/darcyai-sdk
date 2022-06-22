@@ -1,3 +1,10 @@
+> **Warning**
+> 
+> THIS REPOSITORY IS BEING RETIRED. YOU CAN FIND THE MOST UP-TO-DATE CODE, EXAMPLES AND DOCS FOR DARCYAI HERE http://github.com/darcyai
+
+---
+
+
 # Darcy AI SDK
 
 This is the official software development kit (SDK) for building on the Darcy AI platform.
